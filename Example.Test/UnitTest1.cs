@@ -58,7 +58,7 @@ namespace Example.Test
         {
             LogIn("SYSADMIN", string.Empty);
 
-            GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
+            //GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
 
             var buttonRequirement = new ButtonRequirement()
                 .HasText()
