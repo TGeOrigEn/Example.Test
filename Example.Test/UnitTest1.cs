@@ -1,4 +1,4 @@
-using Empyrean.Core.Implementations;
+п»їusing Empyrean.Core.Implementations;
 using Example.Test.Components.Buttons;
 using Example.Test.Components.TreeView;
 using Example.Test.Requirements;
@@ -41,7 +41,7 @@ namespace Example.Test
             var buttonRequirement = new ButtonRequirement()
                 .HasTip()
                 .And()
-                .ByTipEquality("Настройки")
+                .ByTipEquality("РћР‘РЄР•РљРўР«")
                 .Perform();
 
             GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
@@ -60,7 +60,7 @@ namespace Example.Test
                 .And()
                 .IsExpanded(false)
                 .And()
-                .ByNameEquality("Наша организация")
+                .ByNameEquality("РќР°С€Р° РѕСЂРіР°РЅРёР·Р°С†РёСЏ")
                 .Perform();
 
             var itemRequirement = new TreeViewItemRequirement()
@@ -70,7 +70,7 @@ namespace Example.Test
                 .And()
                 .IsExpanded(false)
                 .And()
-                .ByNameContent("Каб. № 30 (эт. № 74)")
+                .ByNameContent("РљР°Р±. в„– 193 (СЌС‚. в„– 87))")
                 .Perform();
 
             var expandabilityItem = WebComponent
@@ -88,7 +88,7 @@ namespace Example.Test
             item.Actions.ContextClick();
 
             var menuItemRequirement = new MenuItemRequirement()
-                .ByNameEquality("Обновить")
+                .ByNameEquality("РћР‘РќРћР’РРўР¬")
                 .Perform();
 
             var menuItem = GetMenu(0).GetItem().WithRequirement(menuItemRequirement).Perform();
@@ -108,7 +108,7 @@ namespace Example.Test
             var buttonRequirement = new ButtonRequirement()
                 .HasText()
                 .And()
-                .ByTextEquality("ОБЪЕКТЫ")
+                .ByTextEquality("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ")
                 .Perform();
 
             var button = WebComponent
