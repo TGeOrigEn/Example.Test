@@ -39,9 +39,9 @@ namespace Example.Test
             LogIn("SYSADMIN", string.Empty);
 
             var buttonRequirement = new ButtonRequirement()
-                .HasTip()
+                .HasText()
                 .And()
-                .ByTipEquality("ОБЪЕКТЫ")
+                .ByTextEquality("ОБЪЕКТЫ")
                 .Perform();
 
             GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
@@ -98,7 +98,7 @@ namespace Example.Test
             LogOut();
         }
 
-
+        [Test]
         public void Test1()
         {
             LogIn("SYSADMIN", string.Empty);
@@ -108,7 +108,7 @@ namespace Example.Test
             var buttonRequirement = new ButtonRequirement()
                 .HasText()
                 .And()
-                .ByTextEquality("�������")
+                .ByTextEquality("ОБЪЕКТЫ")
                 .Perform();
 
             var button = WebComponent
