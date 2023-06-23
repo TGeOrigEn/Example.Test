@@ -50,7 +50,6 @@ namespace Example.Test
                 Console.WriteLine(stopWatch.ElapsedTicks);
                 Console.WriteLine(stopWatch.ElapsedMilliseconds);
                 Thread.Sleep(10000);
-                throw;
             }
             finally
             {
