@@ -6,6 +6,7 @@ using Example.Test.Requirements.Buttons;
 using Example.Test.Requirements.Menu;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
+using System.Text;
 using static Example.Test.Components.TreeView.TreeViewItemComponent;
 using Actions = Empyrean.Core.Allure.Implementations.Actions;
 
@@ -134,11 +135,22 @@ namespace Example.Test
             }
         }
 
+        private static void AddVideo()
+        {
+            var allure = Allure.Net.Commons.AllureLifecycle.Instance;
 
+            var s = "<html><body><video width='100%' height='100%' controls autoplay><source src='"
+           + "http://10.0.11.18:4444/video/" + (WebComponent.DEFAULT_DRIVER as RemoteWebDriver)?.SessionId + ".mp4"
+           + "' type='video/mp4'></video></body></html>";
+
+            var content = Encoding.UTF8.GetBytes(s);
+            allure.AddAttachment("Видео", "text/html", content, ".html");
+        }
 
         [TearDown]
         public void TearDown()
         {
+            AddVideo();
             WebComponent.DEFAULT_DRIVER.Quit();
             WebComponent.DEFAULT_DRIVER.Dispose();
         }
