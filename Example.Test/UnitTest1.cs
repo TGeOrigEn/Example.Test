@@ -6,6 +6,7 @@ using Example.Test.Requirements.Buttons;
 using Example.Test.Requirements.Menu;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
+using System.Diagnostics;
 using static Example.Test.Components.TreeView.TreeViewItemComponent;
 using Actions = Empyrean.Core.Allure.Implementations.Actions;
 
@@ -36,7 +37,12 @@ namespace Example.Test
         [Test]
         public void Auth()
         {
+            var stopWatch = new Stopwatch();
+            stopWatch.Start();
             Thread.Sleep(10000);
+            Console.WriteLine(stopWatch.ElapsedTicks);
+            Console.WriteLine(stopWatch.ElapsedMilliseconds);
+
 
             LogIn("SYSADMIN", string.Empty);
 
