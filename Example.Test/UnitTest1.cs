@@ -41,7 +41,7 @@ namespace Example.Test
             var buttonRequirement = new ButtonRequirement()
                 .HasText()
                 .And()
-                .ByTextEquality("объекты")
+                .ByTextEquality("обекты")
                 .Perform();
 
             GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
