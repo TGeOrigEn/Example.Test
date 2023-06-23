@@ -26,7 +26,7 @@ namespace Example.Test
 
             opts.AddAdditionalOption("selenoid:options", selenoidOptions);
 
-            WebComponent.DEFAULT_DRIVER = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), opts);
+            WebComponent.DEFAULT_DRIVER = new RemoteWebDriver(new Uri("http://10.0.11.18:4444/wd/hub"), opts);
             WebComponent.DEFAULT_TIMEOUT = TimeSpan.FromSeconds(10);
             WebComponent.DEFAULT_ACTIONS = (component, driver) => new Actions(component, driver);
 
