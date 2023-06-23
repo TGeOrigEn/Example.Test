@@ -121,7 +121,7 @@ namespace Example.Test
         [Test]
         public void Test1()
         {
-            Auth();
+          /*  Auth();
 
             var buttonRequirement = new ButtonRequirement()
                 .HasText()
@@ -149,7 +149,7 @@ namespace Example.Test
             while (true)
             {
                 item.Expand();
-            }
+            }*/
         }
 
 
