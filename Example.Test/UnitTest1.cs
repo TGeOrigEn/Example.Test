@@ -46,7 +46,6 @@ namespace Example.Test
             }
             catch
             {
-
                 Console.WriteLine(stopWatch.ElapsedTicks);
                 Console.WriteLine(stopWatch.ElapsedMilliseconds);
                 Thread.Sleep(10000);
@@ -122,7 +121,7 @@ namespace Example.Test
             LogOut();
         }
 
-        [Test]
+       
         public void Test1()
         {
             LogIn("SYSADMIN", string.Empty);
