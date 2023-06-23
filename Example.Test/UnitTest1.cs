@@ -1,7 +1,5 @@
-using Empyrean.Core.Extensions;
 using Empyrean.Core.Implementations;
 using Example.Test.Components.Buttons;
-using Example.Test.Components.Forms;
 using Example.Test.Components.TreeView;
 using Example.Test.Requirements;
 using Example.Test.Requirements.Buttons;
@@ -35,37 +33,12 @@ namespace Example.Test
             WebComponent.DEFAULT_DRIVER.Navigate().GoToUrl("http://10.0.11.18:8081/client/");
         }
 
-     
-        public void Req()
-        {
-            var requirement = new WebComponentRequirement();
-
-            var a = requirement.IsAvalable();
-            var b = requirement.IsDisplayed();
-            var c = requirement.IsEnabled();
-            var d = requirement.IsReadOnly();
-            var e = requirement.IsSelected();
-
-            var ab = a.Perform().And(b.Perform());
-            var abc = a.Perform().And(b.Perform()).And(c.Perform());
-            var c_ab = c.And(ab.Isolate().No()).Perform();
-
-            var a_b = a.And(b.Perform()).Perform();
-            var a_b_c = a.And(b.Perform()).And(c.Perform()).Perform();
-            var c__a_b = c.And(a_b.Isolate().No()).Perform();
-        }
-
         [Test]
         public void Auth()
         {
-
-            while (true)
-            {
-                WebComponent.FindComponent<TreeViewComponent>().Perform().Has(new WebComponentRequirement().IsAvalable(true).Perform(), TimeSpan.FromSeconds(10));
-            }
             LogIn("SYSADMIN", string.Empty);
 
-            //GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
+            GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
 
             var buttonRequirement = new ButtonRequirement()
                 .HasText()
@@ -125,10 +98,12 @@ namespace Example.Test
             LogOut();
         }
 
- 
+        [Test]
         public void Test1()
         {
-            Auth();
+            LogIn("SYSADMIN", string.Empty);
+
+            GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
 
             var buttonRequirement = new ButtonRequirement()
                 .HasText()
