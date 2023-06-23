@@ -16,7 +16,7 @@ namespace Example.Test
         [SetUp]
         public void Setup()
         {
-/*            var opts = new ChromeOptions();
+            var opts = new ChromeOptions();
             opts.BrowserVersion = "latest";
             Dictionary<string, object> selenoidOptions = new Dictionary<string, object>
             {
@@ -30,13 +30,13 @@ namespace Example.Test
             WebComponent.DEFAULT_TIMEOUT = TimeSpan.FromSeconds(10);
             WebComponent.DEFAULT_ACTIONS = (component, driver) => new Actions(component, driver);
 
-            WebComponent.DEFAULT_DRIVER.Navigate().GoToUrl("http://10.0.11.18:8081/client/");*/
+            WebComponent.DEFAULT_DRIVER.Navigate().GoToUrl("http://10.0.11.18:8081/client/");
         }
 
         [Test]
         public void Req()
         {
-           /* var requirement = new WebComponentRequirement();
+            var requirement = new WebComponentRequirement();
 
             var a = requirement.IsAvalable();
             var b = requirement.IsDisplayed();
@@ -50,13 +50,13 @@ namespace Example.Test
 
             var a_b = a.And(b.Perform()).Perform();
             var a_b_c = a.And(b.Perform()).And(c.Perform()).Perform();
-            var c__a_b = c.And(a_b.Isolate().No()).Perform();*/
+            var c__a_b = c.And(a_b.Isolate().No()).Perform();
         }
 
         [Test]
         public void Auth()
         {
-           /* LogIn("SYSADMIN", string.Empty);
+            LogIn("SYSADMIN", string.Empty);
 
             GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
 
@@ -115,13 +115,13 @@ namespace Example.Test
 
             menuItem.Click();
 
-            LogOut();*/
+            LogOut();
         }
 
         [Test]
         public void Test1()
         {
-          /*  Auth();
+            Auth();
 
             var buttonRequirement = new ButtonRequirement()
                 .HasText()
@@ -149,7 +149,7 @@ namespace Example.Test
             while (true)
             {
                 item.Expand();
-            }*/
+            }
         }
 
 
@@ -157,7 +157,7 @@ namespace Example.Test
         [TearDown]
         public void TearDown()
         {
-           /* WebComponent.DEFAULT_DRIVER.Dispose();*/
+            WebComponent.DEFAULT_DRIVER.Dispose();
         }
     }
 }
