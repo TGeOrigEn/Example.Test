@@ -29,7 +29,7 @@ namespace Example.Test
             WebComponent.DEFAULT_DRIVER = new RemoteWebDriver(new Uri("http://10.0.11.18:4444/wd/hub"), opts);
             WebComponent.DEFAULT_TIMEOUT = TimeSpan.FromSeconds(60);
             WebComponent.DEFAULT_ACTIONS = (component, driver) => new Actions(component, driver);
-
+            WebComponent.DEFAULT_DRIVER.Manage().Window.Maximize();
             WebComponent.DEFAULT_DRIVER.Navigate().GoToUrl("http://10.0.11.18:8081/client/");
         }
 
