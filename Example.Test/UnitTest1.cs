@@ -49,8 +49,14 @@ namespace Example.Test
 
                 Console.WriteLine(stopWatch.ElapsedTicks);
                 Console.WriteLine(stopWatch.ElapsedMilliseconds);
+                Thread.Sleep(10000);
                 throw;
             }
+            finally
+            {
+                Console.WriteLine("FINALY123123123213123123123");
+            }
+            
 
             
 
