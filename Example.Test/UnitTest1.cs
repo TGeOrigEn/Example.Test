@@ -53,6 +53,7 @@ namespace Example.Test
             }
             finally
             {
+                Console.WriteLine(TimeSpan.FromSeconds(1).Ticks);
                 Console.WriteLine("FINALY123123123213123123123");
                 Console.WriteLine(stopWatch.ElapsedTicks);
                 Console.WriteLine(stopWatch.ElapsedMilliseconds);
