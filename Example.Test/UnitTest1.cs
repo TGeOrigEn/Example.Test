@@ -58,8 +58,11 @@ namespace Example.Test
         [Test]
         public void Auth()
         {
-            WebComponent.FindComponent<TreeViewComponent>().Perform().Has(new WebComponentRequirement().IsAvalable(true).Perform(), TimeSpan.FromSeconds(10));
 
+            while (true)
+            {
+                WebComponent.FindComponent<TreeViewComponent>().Perform().Has(new WebComponentRequirement().IsAvalable(true).Perform(), TimeSpan.FromSeconds(10));
+            }
             LogIn("SYSADMIN", string.Empty);
 
             //GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
