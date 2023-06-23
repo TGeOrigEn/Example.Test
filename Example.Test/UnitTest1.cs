@@ -157,6 +157,7 @@ namespace Example.Test
         [TearDown]
         public void TearDown()
         {
+            WebComponent.DEFAULT_DRIVER.Quit();
             WebComponent.DEFAULT_DRIVER.Dispose();
         }
     }
