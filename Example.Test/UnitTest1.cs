@@ -39,9 +39,9 @@ namespace Example.Test
             LogIn("SYSADMIN", string.Empty);
 
             var buttonRequirement = new ButtonRequirement()
-                .HasText()
+                .HasTip()
                 .And()
-                .ByTextEquality("Войти")
+                .ByTipEquality("Настройки")
                 .Perform();
 
             GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
