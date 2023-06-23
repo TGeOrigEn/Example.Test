@@ -88,7 +88,7 @@ namespace Example.Test
             item.Actions.ContextClick();
 
             var menuItemRequirement = new MenuItemRequirement()
-                .ByNameEquality("ОБНОВИТЬ")
+                .ByNameEquality("Обновить")
                 .Perform();
 
             var menuItem = GetMenu(0).GetItem().WithRequirement(menuItemRequirement).Perform();
