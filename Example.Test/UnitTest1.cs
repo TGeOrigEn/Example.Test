@@ -38,13 +38,13 @@ namespace Example.Test
         {
             LogIn("SYSADMIN", string.Empty);
 
-            GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
-
             var buttonRequirement = new ButtonRequirement()
                 .HasText()
                 .And()
                 .ByTextEquality("назейрш")
                 .Perform();
+
+            GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
 
             var button = WebComponent
                 .FindComponent<ButtonComponent>()
