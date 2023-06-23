@@ -54,6 +54,8 @@ namespace Example.Test
             finally
             {
                 Console.WriteLine("FINALY123123123213123123123");
+                Console.WriteLine(stopWatch.ElapsedTicks);
+                Console.WriteLine(stopWatch.ElapsedMilliseconds);
             }
             
 
