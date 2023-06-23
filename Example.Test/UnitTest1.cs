@@ -70,7 +70,7 @@ namespace Example.Test
                 .And()
                 .IsExpanded(false)
                 .And()
-                .ByNameContent("Каб. № 193 (эт. № 87)")
+                .ByNameContent("Каб. № 142 (эт. № 222)")
                 .Perform();
 
             var expandabilityItem = WebComponent
