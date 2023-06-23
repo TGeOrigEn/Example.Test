@@ -12,6 +12,8 @@
 
   <ItemGroup>
 	<PackageReference Include="Allure.NUnit" Version="2.9.5-preview.1" />
+	<PackageReference Include="Empyrean.Core" Version="1.0.7" />
+	<PackageReference Include="Empyrean.Core.Allure" Version="1.0.3" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
     <PackageReference Include="NUnit" Version="3.13.3" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.4.2" />
@@ -25,12 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Empyrean.Core">
-      <HintPath>..\..\TGeOrigEn\Empyrean\Empyrean.Core\bin\Debug\netstandard2.1\Empyrean.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Empyrean.Core.Allure">
-      <HintPath>..\..\TGeOrigEn\Empyrean\Empyrean.Allure\bin\Debug\netstandard2.1\Empyrean.Core.Allure.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>
