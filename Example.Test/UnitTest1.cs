@@ -39,12 +39,20 @@ namespace Example.Test
         {
             var stopWatch = new Stopwatch();
             stopWatch.Start();
-            Thread.Sleep(10000);
-            Console.WriteLine(stopWatch.ElapsedTicks);
-            Console.WriteLine(stopWatch.ElapsedMilliseconds);
 
+            try
+            {
+                LogIn("SYSADMIN", string.Empty);
+            }
+            catch
+            {
 
-            LogIn("SYSADMIN", string.Empty);
+                Console.WriteLine(stopWatch.ElapsedTicks);
+                Console.WriteLine(stopWatch.ElapsedMilliseconds);
+                throw;
+            }
+
+            
 
             GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
 
