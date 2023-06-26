@@ -1,5 +1,6 @@
 ﻿using Empyrean.Core.Implementations;
 using Empyrean.Core.Interfaces;
+using Example.Test.Interfaces.Components.Menu;
 
 namespace Example.Test.Components.Menu
 {

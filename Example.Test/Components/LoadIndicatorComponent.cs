@@ -34,7 +34,7 @@ namespace Example.Test.Components
             this.Should(requirement.IsAvalable().Perform(), timeout);
             this.Should(requirement.IsAvalable(false).Perform(), timeout);
 
-            if (this.Wait(requirement.IsAvalable().Perform(), TimeSpan.FromSeconds(1))) return Wait(timeout);
+            if (this.Until(requirement.IsAvalable().Perform(), TimeSpan.FromSeconds(1))) return Wait(timeout);
             else return this;
         }
     }

@@ -7,7 +7,7 @@ namespace Example.Test.Components.Buttons
     {
         public static readonly IDescription DEFAULT_DESCRIPTION = new Description(_DEFAULT_SELECTOR, "Кнопка-инструмент");
 
-        private const string _DEFAULT_SELECTOR = "*[id^='button'][class^='x-btn'][class*='x-unselectable']:not([style*='display'])";
+        private const string _DEFAULT_SELECTOR = "*[class^='x-tool x-box-item x-tool-default x-tool-']:not([style*='display'])";
 
         protected ToolButtonComponent() { }
 
