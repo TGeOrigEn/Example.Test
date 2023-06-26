@@ -1,7 +1,7 @@
 ﻿using Empyrean.Core.Interfaces;
-using Example.Test.Interfaces.Components.TreeView;
+using Tdms.Api.Components.Interfaces.Components.TreeView;
 
-namespace Example.Test.Interfaces.Requirements.TreeView
+namespace Tdms.Api.Components.Interfaces.Requirements.TreeView
 {
     public interface ITreeViewItemRequirementBuilder<TComponent, TBuilder> : IApplicationRequirementBuilder<TComponent, TBuilder>
         where TBuilder : ITreeViewItemRequirementBuilder<TComponent, TBuilder>

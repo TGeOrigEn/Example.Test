@@ -2,9 +2,9 @@
 using Empyrean.Core.Extensions;
 using Empyrean.Core.Implementations;
 using Empyrean.Core.Interfaces;
-using Example.Test.Interfaces.Components;
+using Tdms.Api.Components.Interfaces.Components;
 
-namespace Tdms.Test.Components.Implementations.Components
+namespace Tdms.Api.Components.Implementations.Components
 {
     public abstract class ApplicationComponent : WebComponent, IApplicationComponent
     {

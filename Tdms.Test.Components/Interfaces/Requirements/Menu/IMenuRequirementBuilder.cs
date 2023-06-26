@@ -1,7 +1,7 @@
 ﻿using Empyrean.Core.Interfaces;
-using Example.Test.Interfaces.Components.Menu;
+using Tdms.Api.Components.Interfaces.Components.Menu;
 
-namespace Example.Test.Interfaces.Requirements.Menu
+namespace Tdms.Api.Components.Interfaces.Requirements.Menu
 {
     public interface IMenuRequirementBuilder<TComponent, TBuilder> : IApplicationRequirementBuilder<TComponent, TBuilder>
     where TBuilder : IMenuRequirementBuilder<TComponent, TBuilder>

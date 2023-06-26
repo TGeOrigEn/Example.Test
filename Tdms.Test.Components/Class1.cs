@@ -1,4 +1,4 @@
-﻿namespace Tdms.Test.Components
+﻿namespace Tdms.Api.Components
 {
     public class Class1
     {

@@ -1,7 +1,7 @@
 ﻿using Empyrean.Core.Implementations;
 using Empyrean.Core.Interfaces;
 
-namespace Tdms.Test.Components.Implementations.Components.Buttons
+namespace Tdms.Api.Components.Implementations.Components.Buttons
 {
     public class ToolButtonComponent : ButtonComponent
     {

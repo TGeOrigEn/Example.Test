@@ -1,4 +1,4 @@
-﻿namespace Example.Test.Interfaces.Components.Field
+﻿namespace Tdms.Api.Components.Interfaces.Components.Field
 {
     public interface IFieldComponent : IApplicationComponent
     {

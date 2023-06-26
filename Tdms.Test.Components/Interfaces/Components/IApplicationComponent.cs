@@ -1,6 +1,6 @@
 ﻿using Empyrean.Core.Interfaces;
 
-namespace Example.Test.Interfaces.Components
+namespace Tdms.Api.Components.Interfaces.Components
 {
     public interface IApplicationComponent : IWebComponent
     {

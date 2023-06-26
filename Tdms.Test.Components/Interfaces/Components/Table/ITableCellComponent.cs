@@ -1,4 +1,4 @@
-﻿namespace Example.Test.Interfaces.Components.Table
+﻿namespace Tdms.Api.Components.Interfaces.Components.Table
 {
     public interface ITableCellComponent : IApplicationComponent
     {

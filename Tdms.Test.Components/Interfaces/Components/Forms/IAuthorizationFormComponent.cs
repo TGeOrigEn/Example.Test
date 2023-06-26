@@ -1,7 +1,7 @@
-﻿using Example.Test.Interfaces.Components.Button;
-using Example.Test.Interfaces.Components.Field;
+﻿using Tdms.Api.Components.Interfaces.Components.Buttons;
+using Tdms.Api.Components.Interfaces.Components.Field;
 
-namespace Example.Test.Interfaces.Components.Forms
+namespace Tdms.Api.Components.Interfaces.Components.Forms
 {
     public interface IAuthorizationFormComponent : IApplicationComponent
     {

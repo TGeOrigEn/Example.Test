@@ -1,6 +1,6 @@
 ﻿using Empyrean.Core.Interfaces;
 
-namespace Example.Test.Interfaces.Components.Table
+namespace Tdms.Api.Components.Interfaces.Components.Table
 {
     public interface ITableComponent : IApplicationComponent
     {

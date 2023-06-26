@@ -1,14 +1,14 @@
 ﻿using Empyrean.Core.Implementations;
 using Empyrean.Core.Interfaces;
-using Example.Test.Interfaces.Components.Button;
-using Example.Test.Interfaces.Components.Field;
-using Example.Test.Interfaces.Components.Forms;
-using Tdms.Test.Components.Implementations.Components.Buttons;
-using Tdms.Test.Components.Implementations.Components.Fields;
-using Tdms.Test.Components.Implementations.Requirements.Buttons;
-using Tdms.Test.Components.Implementations.Requirements.Fields;
+using Tdms.Api.Components.Implementations.Components.Buttons;
+using Tdms.Api.Components.Implementations.Components.Fields;
+using Tdms.Api.Components.Implementations.Requirements.Buttons;
+using Tdms.Api.Components.Implementations.Requirements.Fields;
+using Tdms.Api.Components.Interfaces.Components.Buttons;
+using Tdms.Api.Components.Interfaces.Components.Field;
+using Tdms.Api.Components.Interfaces.Components.Forms;
 
-namespace Tdms.Test.Components.Implementations.Components.Form
+namespace Tdms.Api.Components.Implementations.Components.Form
 {
     public class AuthorizationFormComponent : ApplicationComponent, IAuthorizationFormComponent
     {

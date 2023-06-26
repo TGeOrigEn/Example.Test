@@ -1,6 +1,6 @@
 ﻿using Empyrean.Core.Interfaces;
 
-namespace Example.Test.Interfaces.Components.Field.Dropdown.List
+namespace Tdms.Api.Components.Interfaces.Components.Field.Dropdown.List
 {
     public interface IDropdownListItemComponent : IWebComponent
     {

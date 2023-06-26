@@ -1,6 +1,6 @@
 ﻿using Empyrean.Core.Interfaces;
 
-namespace Example.Test.Interfaces.Components.TreeView
+namespace Tdms.Api.Components.Interfaces.Components.TreeView
 {
     public interface ITreeViewComponent : IApplicationComponent
     {

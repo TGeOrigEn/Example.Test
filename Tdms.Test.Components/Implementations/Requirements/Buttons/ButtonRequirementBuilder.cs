@@ -1,10 +1,10 @@
 ﻿using Empyrean.Core.Implementations;
 using Empyrean.Core.Interfaces;
-using Example.Test.Interfaces.Components.Button;
-using Example.Test.Interfaces.Requirements.Button;
-using Tdms.Test.Components.Implementations.Components.Buttons;
+using Tdms.Api.Components.Interfaces.Components.Buttons;
+using Tdms.Api.Components.Interfaces.Requirements.Buttons;
+using Tdms.Api.Components.Implementations.Components.Buttons;
 
-namespace Tdms.Test.Components.Implementations.Requirements.Buttons
+namespace Tdms.Api.Components.Implementations.Requirements.Buttons
 {
     public sealed class ButtonRequirement<TComponent> : ButtonRequirementBuilder<TComponent, ButtonRequirement<TComponent>> where TComponent : IButtonComponent { }
 

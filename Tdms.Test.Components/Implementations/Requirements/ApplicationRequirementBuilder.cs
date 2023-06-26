@@ -1,9 +1,9 @@
 ﻿using Empyrean.Core.Implementations;
 using Empyrean.Core.Interfaces;
-using Example.Test.Interfaces.Components;
-using Example.Test.Interfaces.Requirements;
+using Tdms.Api.Components.Interfaces.Components;
+using Tdms.Api.Components.Interfaces.Requirements;
 
-namespace Tdms.Test.Components.Implementations.Requirements
+namespace Tdms.Api.Components.Implementations.Requirements
 {
     public abstract class ApplicationRequirementBuilder<TComponent, TBuilder> : WebComponentRequirementBuilder<TComponent, TBuilder>, IApplicationRequirementBuilder<TComponent, TBuilder>
         where TBuilder : ApplicationRequirementBuilder<TComponent, TBuilder>

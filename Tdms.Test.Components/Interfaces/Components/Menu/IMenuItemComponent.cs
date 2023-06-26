@@ -1,6 +1,6 @@
 ﻿using Empyrean.Core.Interfaces;
 
-namespace Example.Test.Interfaces.Components.Menu
+namespace Tdms.Api.Components.Interfaces.Components.Menu
 {
     public interface IMenuItemComponent : IApplicationComponent
     {

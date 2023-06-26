@@ -1,8 +1,8 @@
 ﻿using Empyrean.Core.Interfaces;
-using Example.Test.Interfaces.Components.Field.Dropdown;
-using Example.Test.Interfaces.Components.Menu;
+using Tdms.Api.Components.Interfaces.Components.Field.Dropdown;
+using Tdms.Api.Components.Interfaces.Components.Menu;
 
-namespace Example.Test.Interfaces.Components.Table
+namespace Tdms.Api.Components.Interfaces.Components.Table
 {
     public interface ITableHeaderComponent : IApplicationComponent
     {

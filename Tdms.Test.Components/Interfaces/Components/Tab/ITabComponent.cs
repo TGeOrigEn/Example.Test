@@ -1,4 +1,4 @@
-﻿namespace Example.Test.Interfaces.Components.TabBar
+﻿namespace Tdms.Api.Components.Interfaces.Components.TabBar
 {
     public interface ITabComponent : IApplicationComponent
     {

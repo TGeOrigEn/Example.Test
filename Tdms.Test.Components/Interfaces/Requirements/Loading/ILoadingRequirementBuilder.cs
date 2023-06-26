@@ -1,7 +1,7 @@
 ﻿using Empyrean.Core.Interfaces;
-using Example.Test.Interfaces.Components.LoadIndicator;
+using Tdms.Api.Components.Interfaces.Components.LoadIndicator;
 
-namespace Example.Test.Interfaces.Requirements.LoadIndicator
+namespace Tdms.Api.Components.Interfaces.Requirements.LoadIndicator
 {
     public interface ILoadingRequirementBuilder<TComponent, TBuilder> : IApplicationRequirementBuilder<TComponent, TBuilder>
     where TBuilder : ILoadingRequirementBuilder<TComponent, TBuilder>

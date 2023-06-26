@@ -1,4 +1,4 @@
-﻿namespace Example.Test.Interfaces.Components.LoadIndicator
+﻿namespace Tdms.Api.Components.Interfaces.Components.LoadIndicator
 {
     public interface ILoadingComponent : IApplicationComponent
     {

@@ -1,4 +1,4 @@
-﻿namespace Example.Test.Interfaces.Components.Window
+﻿namespace Tdms.Api.Components.Interfaces.Components.Window
 {
     public interface IWindowComponent : IApplicationComponent
     {

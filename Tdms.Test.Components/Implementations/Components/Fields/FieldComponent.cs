@@ -1,9 +1,9 @@
 ﻿using Empyrean.Core.Implementations;
 using Empyrean.Core.Interfaces;
-using Example.Test.Interfaces.Components.Field;
+using Tdms.Api.Components.Interfaces.Components.Field;
 using OpenQA.Selenium;
 
-namespace Tdms.Test.Components.Implementations.Components.Fields
+namespace Tdms.Api.Components.Implementations.Components.Fields
 {
     public class FieldComponent : ApplicationComponent, IFieldComponent
     {

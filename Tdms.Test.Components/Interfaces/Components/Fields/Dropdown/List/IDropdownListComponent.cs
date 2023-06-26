@@ -1,7 +1,7 @@
 ﻿using Empyrean.Core.Interfaces;
-using Example.Test.Interfaces.Components.TreeView;
+using Tdms.Api.Components.Interfaces.Components.TreeView;
 
-namespace Example.Test.Interfaces.Components.Field.Dropdown.List
+namespace Tdms.Api.Components.Interfaces.Components.Field.Dropdown.List
 {
     public interface IDropdownListComponent : IWebComponent
     {

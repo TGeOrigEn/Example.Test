@@ -1,7 +1,7 @@
 ﻿using Empyrean.Core.Interfaces;
-using Example.Test.Interfaces.Components.TabBar;
+using Tdms.Api.Components.Interfaces.Components.TabBar;
 
-namespace Example.Test.Interfaces.Requirements.Tab
+namespace Tdms.Api.Components.Interfaces.Requirements.Tab
 {
     public interface ITabRequirementBuilder<TComponent, TBuilder> : IApplicationRequirementBuilder<TComponent, TBuilder>
         where TBuilder : ITabRequirementBuilder<TComponent, TBuilder>

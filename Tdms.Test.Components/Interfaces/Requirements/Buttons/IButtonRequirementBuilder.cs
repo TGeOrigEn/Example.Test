@@ -1,7 +1,7 @@
 ﻿using Empyrean.Core.Interfaces;
-using Example.Test.Interfaces.Components.Button;
+using Tdms.Api.Components.Interfaces.Components.Buttons;
 
-namespace Example.Test.Interfaces.Requirements.Button
+namespace Tdms.Api.Components.Interfaces.Requirements.Buttons
 {
     public interface IButtonRequirementBuilder<TComponent, TBuilder> : IApplicationRequirementBuilder<TComponent, TBuilder>
         where TBuilder : IButtonRequirementBuilder<TComponent, TBuilder>

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Test", "Example.Test\Example.Test.csproj", "{A4CBA2A5-62BD-413D-A4A1-0F9557040CF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tdms.Test.Components", "Tdms.Test.Components\Tdms.Test.Components.csproj", "{25ED38C9-CCB9-4BAD-A413-624C40310FB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tdms.Api.Components", "Tdms.Test.Components\Tdms.Api.Components.csproj", "{25ED38C9-CCB9-4BAD-A413-624C40310FB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

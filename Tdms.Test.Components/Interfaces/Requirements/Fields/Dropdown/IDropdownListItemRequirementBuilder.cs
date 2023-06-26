@@ -1,7 +1,7 @@
 ﻿using Empyrean.Core.Interfaces;
-using Example.Test.Interfaces.Components.Button;
+using Tdms.Api.Components.Interfaces.Components.Buttons;
 
-namespace Example.Test.Interfaces.Requirements.Fields.Dropdown
+namespace Tdms.Api.Components.Interfaces.Requirements.Fields.Dropdown
 {
     public interface IDropdownListItemRequirementBuilder<TComponent, TBuilder> : IApplicationRequirementBuilder<TComponent, TBuilder>
         where TBuilder : IDropdownListItemRequirementBuilder<TComponent, TBuilder>

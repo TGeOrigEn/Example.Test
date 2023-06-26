@@ -1,6 +1,4 @@
-﻿using Empyrean.Core.Interfaces;
-
-namespace Example.Test.Interfaces.Components.TabBar
+﻿namespace Tdms.Api.Components.Interfaces.Components.TabBar
 {
     public interface ITabBarComponent : IApplicationComponent
     {

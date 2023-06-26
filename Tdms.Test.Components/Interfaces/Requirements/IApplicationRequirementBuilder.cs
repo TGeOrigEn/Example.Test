@@ -1,7 +1,7 @@
 ﻿using Empyrean.Core.Interfaces;
-using Example.Test.Interfaces.Components;
+using Tdms.Api.Components.Interfaces.Components;
 
-namespace Example.Test.Interfaces.Requirements
+namespace Tdms.Api.Components.Interfaces.Requirements
 {
     public interface IApplicationRequirementBuilder<TComponent, TBuilder> : IRequirementBuilder<TComponent, TBuilder>
         where TBuilder : IApplicationRequirementBuilder<TComponent, TBuilder>

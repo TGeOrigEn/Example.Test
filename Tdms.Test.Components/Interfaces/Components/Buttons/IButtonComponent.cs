@@ -1,4 +1,4 @@
-﻿namespace Example.Test.Interfaces.Components.Button
+﻿namespace Tdms.Api.Components.Interfaces.Components.Buttons
 {
     public interface IButtonComponent : IApplicationComponent
     {

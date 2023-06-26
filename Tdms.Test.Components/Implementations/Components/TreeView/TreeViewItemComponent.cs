@@ -1,9 +1,9 @@
 ﻿using Empyrean.Core.Implementations;
 using Empyrean.Core.Interfaces;
-using Example.Test.Interfaces.Components.TreeView;
-using static Example.Test.Interfaces.Components.TreeView.ITreeViewItemComponent;
+using Tdms.Api.Components.Interfaces.Components.TreeView;
+using static Tdms.Api.Components.Interfaces.Components.TreeView.ITreeViewItemComponent;
 
-namespace Tdms.Test.Components.Implementations.Components.TreeView
+namespace Tdms.Api.Components.Implementations.Components.TreeView
 {
     public class TreeViewItemComponent : ApplicationComponent, ITreeViewItemComponent
     {

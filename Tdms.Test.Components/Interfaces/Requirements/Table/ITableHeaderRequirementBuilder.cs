@@ -1,7 +1,7 @@
 ﻿using Empyrean.Core.Interfaces;
-using Example.Test.Interfaces.Components.Table;
+using Tdms.Api.Components.Interfaces.Components.Table;
 
-namespace Example.Test.Interfaces.Requirements.Table
+namespace Tdms.Api.Components.Interfaces.Requirements.Table
 {
     public interface ITableHeaderRequirementBuilder<TComponent, TBuilder> : IApplicationRequirementBuilder<TComponent, TBuilder>
         where TBuilder : ITableHeaderRequirementBuilder<TComponent, TBuilder>
