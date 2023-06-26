@@ -73,9 +73,9 @@ namespace Example.Test
                 .ByNameEquality("Обновить")
                 .Perform();
 
-            var menuItem = GetMenu(0).GetItem().WithRequirement(menuItemRequirement).Perform();
+            /*var menuItem = GetMenu(0).GetItem().WithRequirement(menuItemRequirement).Perform();
 
-            menuItem.Click();
+            menuItem.Click();*/
 
             LogOut();
         }

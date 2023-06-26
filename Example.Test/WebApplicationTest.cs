@@ -5,7 +5,7 @@ using Example.Test.Components.Buttons;
 using Example.Test.Components.Forms;
 using Example.Test.Components.Menu;
 using Example.Test.Configurations;
-using Example.Test.Interfaces.Components;
+using Example.Test.Interfaces.Components.LoadIndicator;
 using Example.Test.Interfaces.Components.Menu;
 using Example.Test.Requirements.Buttons;
 using Example.Test.Requirements.Menu;
@@ -79,7 +79,7 @@ namespace Example.Test
         protected static void LogIn(string username, string password) =>
             IWebComponent.Context.GetComponent<AuthorizationFormComponent>().Perform().LogIn(username, password);
 
-        protected static IWebComponentBuilder<ILoadIndicatorComponent> GetLoad() => Context.GetComponent<ILoadIndicatorComponent>();
+        protected static IWebComponentBuilder<ILoadingComponent> GetLoad() => Context.GetComponent<ILoadingComponent>();
 
         protected static IMenuComponent GetMenu(int index) => Context.GetComponent<IMenuComponent>()
             .WithDescription(MenuComponent.DEFAULT_DESCRIPTION.With(index))

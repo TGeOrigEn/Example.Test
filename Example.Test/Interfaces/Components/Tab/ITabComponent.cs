@@ -2,7 +2,7 @@
 {
     public interface ITabComponent : IApplicationComponent
     {
-        bool IsSelected();
+        bool IsActive();
 
         string GetName();
 

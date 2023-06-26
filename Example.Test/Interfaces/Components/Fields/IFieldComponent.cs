@@ -1,6 +1,4 @@
-﻿using Empyrean.Core.Interfaces;
-
-namespace Example.Test.Interfaces.Components.Field
+﻿namespace Example.Test.Interfaces.Components.Field
 {
     public interface IFieldComponent : IApplicationComponent
     {
