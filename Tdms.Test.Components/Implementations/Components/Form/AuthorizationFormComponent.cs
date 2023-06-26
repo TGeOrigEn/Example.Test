@@ -53,7 +53,7 @@ namespace Tdms.Test.Components.Implementations.Components.Form
 
         protected override IDescription InitializeDescription() => DEFAULT_DESCRIPTION;
 
-        public void LogIn(string username, string password)
+        public virtual void LogIn(string username, string password)
         {
             UsernameField.SetValue(username);
             PasswordField.SetValue(password);
