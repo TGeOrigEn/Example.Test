@@ -18,9 +18,13 @@ namespace Tdms.Api.Components.Implementations.Components.Table
 
         private const string _CHECK_BOX_SELECTOR = "span[class^='x-grid-checkcolumn']";
 
+        private const string _VALUE_SELECTOR = "div[class^='x-grid-cell-inner']";
+
         protected IWebComponent stateZeroComponent;
 
         protected IWebComponent stateOneComponent;
+
+        protected IWebComponent valueComponent;
 
         protected IWebComponent checkBox;
 
@@ -32,6 +36,8 @@ namespace Tdms.Api.Components.Implementations.Components.Table
 
             var checkBoxDescription = new Description(_CHECK_BOX_SELECTOR, "Флаг");
 
+            var valueDescription = new Description(_VALUE_SELECTOR, "Значение");
+
             stateZeroComponent = GetComponent()
                 .WithDescription(stateZeroDescription)
                 .Perform();
@@ -42,6 +48,10 @@ namespace Tdms.Api.Components.Implementations.Components.Table
 
             checkBox = GetComponent()
                 .WithDescription(checkBoxDescription)
+                .Perform();
+
+            valueComponent = GetComponent()
+                .WithDescription(valueDescription)
                 .Perform();
         }
 
@@ -61,7 +71,7 @@ namespace Tdms.Api.Components.Implementations.Components.Table
             return _DEFAULT_STATE;
         }
 
-        public string GetValue() => Properties.GetText();
+        public string GetValue() => valueComponent.Properties.GetText();
 
         public bool HasCheckBox() => checkBox.IsAvalable();
 

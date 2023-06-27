@@ -2,7 +2,9 @@
 using NUnit.Allure.Attributes;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using System;
 using Tdms.Api.Components.Implementations.Components.Table;
+using Tdms.Api.Components.Implementations.Components.Window;
 using Tdms.Api.Components.Implementations.Requirements.Menu;
 using Tdms.Api.Components.Implementations.Requirements.Table;
 
@@ -23,7 +25,7 @@ namespace Example.Test
             LogIn("SYSADMIN", string.Empty);
 
             var headerRequirement = new TableHeaderRequirement()
-                .ByNameEquality("Дата модификаци")
+                .ByNameEquality("Дата модификации")
                 .Perform();
 
             var menuItemRequirement = new MenuItemRequirement()
@@ -46,6 +48,30 @@ namespace Example.Test
                 .Perform();
 
             menuItem.Click();
+
+            var itemRequirement = new MenuItemRequirement()
+                .ByNameEquality("Столбцы")
+                .Perform();
+
+            menu.GetItem()
+                .WithRequirement(itemRequirement)
+                .Perform().Click();
+
+            GetMenu(1).GetItem().WithRequirement(new MenuItemRequirement().ByNameEquality("Статус").Perform()).Perform().Click();
+
+            table.GetRow().Perform().Click();
+
+            var cell = table.GetRow().Perform().GetCell().WithRequirement(new TableCellRequirement().ByHeader(header).Perform()).Perform();
+
+            var value = cell.GetValue();
+
+            cell.ContextClick();
+
+            GetMenu(0).GetItem().WithRequirement(new MenuItemRequirement().ByNameEquality("Редактировать карточку...").Perform()).Perform().Click();
+
+            var window = Context.GetComponent<WindowComponent>().Perform();
+
+            window.Close();
         }
     }
 }

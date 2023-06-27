@@ -15,7 +15,7 @@ namespace Tdms.Api.Components.Implementations.Components.Table
 
         public static IDescription DEFAULT_DESCRIPTION = new Description(_DEFAULT_SELECTOR, "Заголовок таблицы");
 
-        private const string _DEFAULT_SELECTOR = "div[class^='x-column-header x-column-header-align-start']";
+        private const string _DEFAULT_SELECTOR = "div[class^='x-column-header x-column-header-align-start']:not([aria-hidden='true'])";
 
         private const string _NAME_SELECTOR = "span[class*='x-column-header-text-inner']";
 
@@ -61,7 +61,7 @@ namespace Tdms.Api.Components.Implementations.Components.Table
 
         public IWebComponentBuilder<IMenuComponent> ShowMenu()
         {
-            triggerComponent.Actions.Hover();
+            Actions.Hover();
             triggerComponent.Actions.Click();
 
             return IWebComponent.Context.GetComponent<IMenuComponent>(typeof(MenuComponent));

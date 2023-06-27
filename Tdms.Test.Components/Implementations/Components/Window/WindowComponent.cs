@@ -53,7 +53,7 @@ namespace Tdms.Api.Components.Implementations.Components.Window
 
             var maximizeRequirement = toolButtonRequirement.HasTip(false).Perform();
 
-            var closeRequirement = toolButtonRequirement.HasTip().And().ByTipContent("закрыть").Perform();
+            var closeRequirement = toolButtonRequirement.HasTip().And().ByTipContent("Закрыть").Perform();
 
             headerComponent = GetComponent()
                 .WithDescription(headerDescription)

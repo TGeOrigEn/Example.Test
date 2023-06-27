@@ -31,7 +31,7 @@ namespace Tdms.Api.Components.Implementations.Requirements.Table
                 return header.Should(headerRequirement.IsAvalable().Perform()).Index;
             }
 
-            var description = $"Ячейка относится к '{header.Hierarchy}'";
+            var description = $"Ячейка относится к '{header}'";
 
             return CreateBuilder(new Requirement<TComponent, int>(component => component.Index, () => GetHeaderIndex(), description));
         }

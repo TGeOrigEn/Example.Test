@@ -8,7 +8,7 @@ namespace Tdms.Api.Components.Implementations.Components.Table
     {
         public static IDescription DEFAULT_DESCRIPTION = new Description(_DEFAULT_SELECTOR, "Таблица");
 
-        private const string _DEFAULT_SELECTOR = "div[id^='gridview'][class*='x-fit-item'][style*='overflow: hidden']";
+        private const string _DEFAULT_SELECTOR = "div[id^='tdmsContent']" /*"div[id^='gridview'][class*='x-fit-item'][style*='overflow: hidden']"*/;
 
         protected TableComponent() { }
 
