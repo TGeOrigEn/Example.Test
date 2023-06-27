@@ -2,13 +2,12 @@
 using Empyrean.Core.Interfaces;
 using Tdms.Api.Components.Interfaces.Components.Field;
 using Tdms.Api.Components.Interfaces.Requirements.Fields;
-using Tdms.Api.Components.Implementations.Components.Fields;
 
 namespace Tdms.Api.Components.Implementations.Requirements.Fields
 {
     public sealed class FieldRequirement<TComponent> : FieldRequirementBuilder<TComponent, FieldRequirement<TComponent>> where TComponent : IFieldComponent { }
 
-    public sealed class FieldRequirement : FieldRequirementBuilder<FieldComponent, FieldRequirement> { }
+    public sealed class FieldRequirement : FieldRequirementBuilder<IFieldComponent, FieldRequirement> { }
 
     public abstract class FieldRequirementBuilder<TComponent, TBuilder> : ApplicationRequirementBuilder<TComponent, TBuilder>, IFieldRequirementBuilder<TComponent, TBuilder>
         where TBuilder : FieldRequirementBuilder<TComponent, TBuilder>

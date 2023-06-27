@@ -24,15 +24,15 @@ namespace Tdms.Api.Components.Implementations.Components.Form
 
         protected AuthorizationFormComponent()
         {
-            var usernameFieldRequirement = new FieldRequirement()
+            var usernameFieldRequirement = new FieldRequirement<FieldComponent>()
                 .ByLabelEquality("Пользователь:")
                 .Perform();
 
-            var passwordFieldRequirement = new FieldRequirement()
+            var passwordFieldRequirement = new FieldRequirement<FieldComponent>()
                 .ByLabelEquality("Пароль:")
                 .Perform();
 
-            var loginButtonRequirement = new ButtonRequirement()
+            var loginButtonRequirement = new ButtonRequirement<ButtonComponent>()
                 .HasName()
                 .And()
                 .ByNameEquality("Войти")

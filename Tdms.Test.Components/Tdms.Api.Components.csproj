@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Empyrean.Core" Version="1.0.9" />
-    <PackageReference Include="Empyrean.Core.Allure" Version="1.0.9" />
+    <PackageReference Include="Empyrean.Core" Version="1.1.0" />
+    <PackageReference Include="Empyrean.Core.Allure" Version="1.1.0" />
   </ItemGroup>
 
 </Project>

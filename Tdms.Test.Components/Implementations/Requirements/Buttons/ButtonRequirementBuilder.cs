@@ -8,7 +8,7 @@ namespace Tdms.Api.Components.Implementations.Requirements.Buttons
 {
     public sealed class ButtonRequirement<TComponent> : ButtonRequirementBuilder<TComponent, ButtonRequirement<TComponent>> where TComponent : IButtonComponent { }
 
-    public sealed class ButtonRequirement : ButtonRequirementBuilder<ButtonComponent, ButtonRequirement> { }
+    public sealed class ButtonRequirement : ButtonRequirementBuilder<IButtonComponent, ButtonRequirement> { }
 
     public abstract class ButtonRequirementBuilder<TComponent, TBuilder> : ApplicationRequirementBuilder<TComponent, TBuilder>, IButtonRequirementBuilder<TComponent, TBuilder>
         where TBuilder : ButtonRequirementBuilder<TComponent, TBuilder>
