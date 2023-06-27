@@ -32,8 +32,8 @@ namespace Tdms.Api.Components.Implementations.Components.Loading
         {
             var requirement = new WebComponentRequirement();
 
-            this.Should(requirement.IsAvalable().Perform(), timeout);
-            this.Should(requirement.IsAvalable(false).Perform(), timeout);
+            this.Has(requirement.IsAvalable().Perform(), timeout);
+            this.Has(requirement.IsAvalable(false).Perform(), timeout);
 
             if (this.Until(requirement.IsAvalable().Perform(), TimeSpan.FromSeconds(1)))
                 Wait(timeout);

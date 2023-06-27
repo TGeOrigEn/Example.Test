@@ -9,6 +9,7 @@ using Tdms.Api.Components.Implementations.Components.Buttons;
 using Tdms.Api.Components.Implementations.Components.Form;
 using Tdms.Api.Components.Implementations.Components.Loading;
 using Tdms.Api.Components.Implementations.Components.Menu;
+using Tdms.Api.Components.Implementations.Components.Window;
 using Tdms.Api.Components.Implementations.Requirements.Buttons;
 using Tdms.Api.Components.Implementations.Requirements.Menu;
 using Tdms.Api.Components.Interfaces.Components.LoadIndicator;
@@ -37,6 +38,7 @@ namespace Example.Test
             IWebComponent.Configuration = new Configuration(Driver, Timeout);
             IWebComponent.Configuration.Driver.Navigate().GoToUrl(Address);
             IWebComponent.Context = Context;
+            Thread.Sleep(1_000);
         }
 
         [TearDown]
@@ -74,6 +76,12 @@ namespace Example.Test
                 .Perform();
 
             menuItem.Click();
+
+            var messageBox = Context
+                .GetComponent<MessageBoxComponent>()
+                .Perform();
+
+            messageBox.Yes();
         }
 
         protected static void LogIn(string username, string password) =>

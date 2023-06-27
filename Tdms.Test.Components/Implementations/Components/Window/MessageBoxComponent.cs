@@ -16,7 +16,7 @@ namespace Tdms.Api.Components.Implementations.Components.Window
 
         protected IWebComponent messageComponent;
 
-        protected MessageBoxComponent()
+        protected MessageBoxComponent() : base()
         {
             var messageDescription = new Description(_MESSAGE_SELECTOR, "Сообщение окна");
 
@@ -29,7 +29,11 @@ namespace Tdms.Api.Components.Implementations.Components.Window
             messageComponent = GetComponent()
                 .WithDescription(messageDescription)
                 .Perform();
+
+            InitializeButtons(footerComponent);
         }
+
+
 
         protected override IDescription InitializeDescription() => DEFAULT_DESCRIPTION;
 

@@ -26,7 +26,7 @@ namespace Example.Test
                 .ByNameEquality("ОБЪЕКТЫ")
                 .Perform();
 
-            GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
+            GetLoad().Perform().Wait(TimeSpan.FromSeconds(1));
 
             var button = Context
                 .GetComponent<ButtonComponent>()

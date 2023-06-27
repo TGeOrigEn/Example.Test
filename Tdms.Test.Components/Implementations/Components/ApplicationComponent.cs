@@ -30,8 +30,8 @@ namespace Tdms.Api.Components.Implementations.Components
 
         public virtual bool HasTip() => HasAttribute(_TIP_ATTRIBUTE, tipComponent);
 
-        protected static string GetAttribute(string attributeName, IWebComponent attributeComponent) => attributeComponent.Properties.GetAttribute(attributeName)
-            ?? throw new WebComponentException($"Веб-компонент '{attributeComponent.Hierarchy}' не имеет атрибут '{attributeName}'.");
+        protected static string GetAttribute(string attributeName, IWebComponent attributeComponent) =>
+            attributeComponent.Properties.GetAttribute(attributeName) ?? string.Empty;
 
         protected static bool HasAttribute(string attributeName, IWebComponent attributeComponent)
         {

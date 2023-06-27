@@ -27,17 +27,17 @@ namespace Tdms.Api.Components.Implementations.Components.Window
 
         protected IButtonComponent maximizeButton;
 
-        protected IButtonComponent cancelButton;
-
-        protected IButtonComponent applyButton;
-
         protected IButtonComponent closeButton;
 
-        protected IButtonComponent okButton;
+        protected IButtonComponent cancelButton = null!;
 
-        protected IButtonComponent yesButton;
+        protected IButtonComponent applyButton = null!;
 
-        protected IButtonComponent noButton;
+        protected IButtonComponent okButton = null!;
+
+        protected IButtonComponent yesButton = null!;
+
+        protected IButtonComponent noButton = null!;
 
         protected WindowComponent()
         {
@@ -48,18 +48,6 @@ namespace Tdms.Api.Components.Implementations.Components.Window
             var headerDescription = new Description(_HEADER_SELECTOR, "Верхний колонтитул окна");
 
             var toolButtonRequirement = new ButtonRequirement<ToolButtonComponent>();
-
-            var buttonRequirement = new ButtonRequirement<ButtonComponent>();
-
-            var cancelRequirement = buttonRequirement.ByNameEquality("Отмена").Perform();
-
-            var applyRequirement = buttonRequirement.ByNameEquality("Принять").Perform();
-
-            var yesRequirement = buttonRequirement.ByNameEquality("Да").Perform();
-
-            var noRequirement = buttonRequirement.ByNameEquality("Нет").Perform();
-
-            var okRequirement = buttonRequirement.ByNameEquality("Ок").Perform();
 
             var maximizeRequirement = toolButtonRequirement.HasTip(false).Perform();
 
@@ -76,6 +64,31 @@ namespace Tdms.Api.Components.Implementations.Components.Window
             titleComponent = headerComponent.GetComponent()
                 .WithDescription(nameDescription)
                 .Perform();
+
+            maximizeButton = headerComponent.GetComponent<ToolButtonComponent>()
+                .WithRequirement(maximizeRequirement)
+                .Perform();
+
+            closeButton = headerComponent.GetComponent<ToolButtonComponent>()
+                .WithRequirement(closeRequirement)
+                .Perform();
+
+            InitializeButtons(footerComponent);
+        }
+
+        protected virtual void InitializeButtons(IWebComponent footerComponent)
+        {
+            var buttonRequirement = new ButtonRequirement<ButtonComponent>();
+
+            var cancelRequirement = buttonRequirement.ByNameEquality("Отмена").Perform();
+
+            var applyRequirement = buttonRequirement.ByNameEquality("Принять").Perform();
+
+            var yesRequirement = buttonRequirement.ByNameEquality("Да").Perform();
+
+            var noRequirement = buttonRequirement.ByNameEquality("Нет").Perform();
+
+            var okRequirement = buttonRequirement.ByNameEquality("Ок").Perform();
 
             cancelButton = footerComponent.GetComponent<ButtonComponent>()
                 .WithRequirement(cancelRequirement)
@@ -96,14 +109,6 @@ namespace Tdms.Api.Components.Implementations.Components.Window
             noButton = footerComponent.GetComponent<ButtonComponent>()
                .WithRequirement(noRequirement)
                .Perform();
-
-            maximizeButton = headerComponent.GetComponent<ToolButtonComponent>()
-                .WithRequirement(maximizeRequirement)
-                .Perform();
-
-            closeButton = headerComponent.GetComponent<ToolButtonComponent>()
-                .WithRequirement(closeRequirement)
-                .Perform();
         }
 
         protected override IDescription InitializeDescription() => DEFAULT_DESCRIPTION;

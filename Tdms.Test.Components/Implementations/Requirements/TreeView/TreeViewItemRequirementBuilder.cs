@@ -14,7 +14,7 @@ namespace Tdms.Api.Components.Implementations.Requirements.TreeView
         where TComponent : ITreeViewItemComponent
     {
         public virtual IOperationBuilder<TComponent, TBuilder> IsExpandable(bool flag = true) =>
-            CreateBuilder(new Requirement<TComponent, bool>(component => component.IsExpanded(), flag, "Разворачиваем"));
+            CreateBuilder(new Requirement<TComponent, bool>(component => component.IsExpandable(), flag, "Разворачиваем"));
 
         public virtual IOperationBuilder<TComponent, TBuilder> IsExpanded(bool flag = true) =>
             CreateBuilder(new Requirement<TComponent, bool>(component => component.IsExpanded(), flag, "Развёрнут"));

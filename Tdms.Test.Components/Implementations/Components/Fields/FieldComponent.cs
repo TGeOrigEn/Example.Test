@@ -1,7 +1,7 @@
 ﻿using Empyrean.Core.Implementations;
 using Empyrean.Core.Interfaces;
-using Tdms.Api.Components.Interfaces.Components.Field;
 using OpenQA.Selenium;
+using Tdms.Api.Components.Interfaces.Components.Field;
 
 namespace Tdms.Api.Components.Implementations.Components.Fields
 {
@@ -15,9 +15,9 @@ namespace Tdms.Api.Components.Implementations.Components.Fields
 
         private const string _DEFAULT_SELECTOR = "div[class^='x-field']:not([style*='display'])";
 
-        private const string _LABEL_SELECTOR = "input[class*='x-form-field']";
+        private const string _LABEL_SELECTOR = "span[class*='label-text']";
 
-        private const string _INPUT_SELECTOR = "span[class*='label-text']";
+        private const string _INPUT_SELECTOR = "input[class*='x-form-field']";
 
         protected IWebComponent labelComponent;
 
@@ -31,7 +31,7 @@ namespace Tdms.Api.Components.Implementations.Components.Fields
 
             labelComponent = GetComponent()
                 .WithDescription(labelDescription)
-                .Perform();     
+                .Perform();
 
             inputComponent = GetComponent()
                 .WithDescription(inputDescription)
