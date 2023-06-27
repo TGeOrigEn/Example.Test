@@ -1,4 +1,5 @@
-﻿using Empyrean.Core.Implementations;
+﻿using Empyrean.Core.Allure.Implementations;
+using Empyrean.Core.Implementations;
 using Empyrean.Core.Interfaces;
 using Tdms.Api.Components.Implementations.Components.Buttons;
 using Tdms.Api.Components.Implementations.Components.Fields;

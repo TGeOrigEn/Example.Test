@@ -1,4 +1,6 @@
-﻿using Example.Test.Drivers;
+﻿using Allure.Net.Commons;
+using Example.Test.Drivers;
+using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
 using Tdms.Api.Components.Implementations.Components.Buttons;
 using Tdms.Api.Components.Implementations.Components.TreeView;
@@ -9,14 +11,18 @@ using static Tdms.Api.Components.Interfaces.Components.TreeView.ITreeViewItemCom
 
 namespace Example.Test
 {
-    public class Tests : WebApplicationTest
+    [AllureSuite("Тесты авторизации")]
+    public class AuthorizationTest : WebApplicationTest
     {
         protected override IWebDriver Driver => Chrome.Remote(Host);
 
         protected override string Address => "http://10.0.11.18:8081/client/";
 
         [Test]
-        public void Auth()
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureOwner("Артём Тисло Максимович")]
+        [AllureName("Успешная авторизация")]
+        public void AuthorizationSuccessTest()
         {
             LogIn("SYSADMIN", string.Empty);
 
@@ -78,42 +84,6 @@ namespace Example.Test
             menuItem.Click();
 
             LogOut();
-        }
-
-        [Test]
-        public void Test1()
-        {
-            LogIn("SYSADMIN", string.Empty);
-
-            GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
-
-            var buttonRequirement = new ButtonRequirement<ButtonComponent>()
-                .HasName()
-                .And()
-                .ByNameEquality("ОБЪЕКТЫ")
-                .Perform();
-
-            var button = Context
-                .GetComponent<ButtonComponent>()
-                .WithRequirement(buttonRequirement)
-                .Perform();
-
-            button.Click();
-
-            var expandabilityRequirement = new TreeViewItemRequirement<TreeViewItemComponent>()
-                .IsDisplayed()
-                .And()
-                .IsExpandable()
-                .And()
-                .IsExpanded(false)
-                .Perform();
-
-            var item = Context.GetComponent<TreeViewItemComponent>().WithRequirement(expandabilityRequirement).Perform();
-
-            while (true)
-            {
-                item.Expand();
-            }
         }
     }
 }

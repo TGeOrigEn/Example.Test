@@ -100,7 +100,7 @@ namespace Example.Test
 
             var allure = Allure.Net.Commons.AllureLifecycle.Instance;
             var src = $"{Host}video/{(IWebComponent.Configuration.Driver as RemoteWebDriver)?.SessionId}.mp4";
-            var html = $"<html><body><video width='100%' height='100%' controls autoplay><source src='${src}' type='video/mp4'></video></body></html>";
+            var html = $"<html><body><video width='100%' height='100%' controls autoplay><source src='{src}' type='video/mp4'></video></body></html>";
 
             var content = Encoding.UTF8.GetBytes(html);
             allure.AddAttachment("Видео", "text/html", content, ".html");
