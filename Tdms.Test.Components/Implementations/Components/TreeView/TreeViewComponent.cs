@@ -10,6 +10,8 @@ namespace Tdms.Api.Components.Implementations.Components.TreeView
 
         private const string _DEFAULT_SELECTOR = "div[id^='treeview'][class^='x-tree-view']";
 
+        protected TreeViewComponent() { }
+
         protected override IDescription InitializeDescription() => DEFAULT_DESCRIPTION;
 
         public IWebComponentCollectionBuilder<TComponent> GetItems<TComponent>() where TComponent : ITreeViewItemComponent => GetComponents<TComponent>();

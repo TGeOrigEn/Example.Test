@@ -38,6 +38,8 @@ namespace Tdms.Api.Components.Implementations.Components.Fields
                 .Perform();
         }
 
+        protected override IDescription InitializeDescription() => DEFAULT_DESCRIPTION;
+
         public virtual void Clear() => inputComponent.Actions.Clear();
 
         public virtual string GetLabel() => labelComponent.Properties.GetText();
