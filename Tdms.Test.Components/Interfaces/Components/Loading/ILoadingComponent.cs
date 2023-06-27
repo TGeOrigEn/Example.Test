@@ -1,4 +1,6 @@
-﻿namespace Tdms.Api.Components.Interfaces.Components.LoadIndicator
+﻿using System;
+
+namespace Tdms.Api.Components.Interfaces.Components.LoadIndicator
 {
     public interface ILoadingComponent : IApplicationComponent
     {

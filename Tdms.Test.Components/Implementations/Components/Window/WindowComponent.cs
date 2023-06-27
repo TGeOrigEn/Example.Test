@@ -49,6 +49,8 @@ namespace Tdms.Api.Components.Implementations.Components.Window
 
             var toolButtonRequirement = new ButtonRequirement<ToolButtonComponent>();
 
+            var buttonRequirement = new ButtonRequirement<ButtonComponent>();
+
             var maximizeRequirement = toolButtonRequirement.HasTip(false).Perform();
 
             var closeRequirement = toolButtonRequirement.HasTip().And().ByTipContent("закрыть").Perform();

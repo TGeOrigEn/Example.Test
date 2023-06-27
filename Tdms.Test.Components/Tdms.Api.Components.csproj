@@ -1,14 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Empyrean.Core" Version="1.1.0" />
-    <PackageReference Include="Empyrean.Core.Allure" Version="1.1.0" />
+    <PackageReference Include="Empyrean.Core" Version="1.1.2" />
+    <PackageReference Include="Empyrean.Core.Allure" Version="1.1.2" />
   </ItemGroup>
 
 </Project>

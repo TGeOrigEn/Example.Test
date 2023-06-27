@@ -1,4 +1,5 @@
-﻿using Tdms.Api.Components.Interfaces.Components.Table;
+﻿using System;
+using Tdms.Api.Components.Interfaces.Components.Table;
 
 namespace Tdms.Api.Components.Implementations.Components.Table
 {

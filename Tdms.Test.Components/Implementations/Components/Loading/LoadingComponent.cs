@@ -1,6 +1,7 @@
 ﻿using Empyrean.Core.Extensions;
 using Empyrean.Core.Implementations;
 using Empyrean.Core.Interfaces;
+using System;
 using Tdms.Api.Components.Interfaces.Components.LoadIndicator;
 
 namespace Tdms.Api.Components.Implementations.Components.Loading

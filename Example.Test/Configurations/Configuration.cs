@@ -1,6 +1,7 @@
 ﻿using Empyrean.Core.Allure.Implementations;
 using Empyrean.Core.Interfaces;
 using OpenQA.Selenium;
+using System;
 
 namespace Example.Test.Configurations
 {

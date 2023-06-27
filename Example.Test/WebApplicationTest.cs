@@ -2,9 +2,12 @@
 using Empyrean.Core.Interfaces;
 using Example.Test.Configurations;
 using NUnit.Allure.Core;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using System;
 using System.Text;
+using System.Threading;
 using Tdms.Api.Components.Implementations.Components.Buttons;
 using Tdms.Api.Components.Implementations.Components.Form;
 using Tdms.Api.Components.Implementations.Components.Loading;
@@ -12,6 +15,7 @@ using Tdms.Api.Components.Implementations.Components.Menu;
 using Tdms.Api.Components.Implementations.Components.Window;
 using Tdms.Api.Components.Implementations.Requirements.Buttons;
 using Tdms.Api.Components.Implementations.Requirements.Menu;
+using Tdms.Api.Components.Interfaces.Components.Forms;
 using Tdms.Api.Components.Interfaces.Components.LoadIndicator;
 using Tdms.Api.Components.Interfaces.Components.Menu;
 
@@ -37,8 +41,9 @@ namespace Example.Test
         {
             IWebComponent.Configuration = new Configuration(Driver, Timeout);
             IWebComponent.Configuration.Driver.Navigate().GoToUrl(Address);
+            IWebComponent.Configuration.Driver.Manage().Window.Maximize();
             IWebComponent.Context = Context;
-            Thread.Sleep(1_000);
+            Thread.Sleep(1_750);
         }
 
         [TearDown]
@@ -84,8 +89,8 @@ namespace Example.Test
             messageBox.Yes();
         }
 
-        protected static void LogIn(string username, string password) =>
-            IWebComponent.Context.GetComponent<AuthorizationFormComponent>().Perform().LogIn(username, password);
+        protected static IAuthorizationFormComponent LogIn(string username, string password) =>
+           IWebComponent.Context.GetComponent<AuthorizationFormComponent>().Perform().LogIn(username, password);
 
         protected static IWebComponentBuilder<ILoadingComponent> GetLoad() => Context.GetComponent<ILoadingComponent>(typeof(LoadingComponent));
 

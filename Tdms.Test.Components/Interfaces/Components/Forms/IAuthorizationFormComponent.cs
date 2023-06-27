@@ -11,6 +11,6 @@ namespace Tdms.Api.Components.Interfaces.Components.Forms
 
         public IButtonComponent LogInButton { get; }
 
-        public void LogIn(string username, string password);
+        public IAuthorizationFormComponent LogIn(string username, string password);
     }
 }

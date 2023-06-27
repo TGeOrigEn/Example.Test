@@ -1,5 +1,4 @@
-﻿using Empyrean.Core.Allure.Implementations;
-using Empyrean.Core.Implementations;
+﻿using Empyrean.Core.Implementations;
 using Empyrean.Core.Interfaces;
 using Tdms.Api.Components.Implementations.Components.Buttons;
 using Tdms.Api.Components.Implementations.Components.Fields;
@@ -54,11 +53,12 @@ namespace Tdms.Api.Components.Implementations.Components.Form
 
         protected override IDescription InitializeDescription() => DEFAULT_DESCRIPTION;
 
-        public virtual void LogIn(string username, string password)
+        public virtual IAuthorizationFormComponent LogIn(string username, string password)
         {
             UsernameField.SetValue(username);
             PasswordField.SetValue(password);
             LogInButton.Click();
+            return this;
         }
     }
 }

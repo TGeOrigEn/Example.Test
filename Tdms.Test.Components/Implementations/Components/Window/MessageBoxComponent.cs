@@ -33,8 +33,6 @@ namespace Tdms.Api.Components.Implementations.Components.Window
             InitializeButtons(footerComponent);
         }
 
-
-
         protected override IDescription InitializeDescription() => DEFAULT_DESCRIPTION;
 
         public virtual string GetMessage() => messageComponent.Properties.GetText();

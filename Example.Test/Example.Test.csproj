@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
@@ -11,13 +10,11 @@
 
   <ItemGroup>
 	<PackageReference Include="Allure.NUnit" Version="2.9.5-preview.1" />
-	<PackageReference Include="Empyrean.Core" Version="1.1.0" />
-	<PackageReference Include="Empyrean.Core.Allure" Version="1.1.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+	<PackageReference Include="Empyrean.Core" Version="1.1.2" />
+	<PackageReference Include="Empyrean.Core.Allure" Version="1.1.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.2" />
     <PackageReference Include="NUnit" Version="3.13.3" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.4.2" />
     <PackageReference Include="NUnit.Analyzers" Version="3.6.1" />
-    <PackageReference Include="coverlet.collector" Version="3.2.0" />
     <PackageReference Include="Selenium.WebDriver" Version="4.10.0" />
   </ItemGroup>
 
