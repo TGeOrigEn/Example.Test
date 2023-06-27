@@ -1,18 +1,18 @@
 ﻿using Empyrean.Core.Implementations;
 using Empyrean.Core.Interfaces;
-using Example.Test.Components;
-using Example.Test.Components.Buttons;
-using Example.Test.Components.Forms;
-using Example.Test.Components.Menu;
 using Example.Test.Configurations;
-using Example.Test.Interfaces.Components.LoadIndicator;
-using Example.Test.Interfaces.Components.Menu;
-using Example.Test.Requirements.Buttons;
-using Example.Test.Requirements.Menu;
 using NUnit.Allure.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using System.Text;
+using Tdms.Api.Components.Implementations.Components.Buttons;
+using Tdms.Api.Components.Implementations.Components.Form;
+using Tdms.Api.Components.Implementations.Components.Loading;
+using Tdms.Api.Components.Implementations.Components.Menu;
+using Tdms.Api.Components.Implementations.Requirements.Buttons;
+using Tdms.Api.Components.Implementations.Requirements.Menu;
+using Tdms.Api.Components.Interfaces.Components.LoadIndicator;
+using Tdms.Api.Components.Interfaces.Components.Menu;
 
 namespace Example.Test
 {
@@ -36,7 +36,7 @@ namespace Example.Test
         {
             IWebComponent.Configuration = new Configuration(Driver, Timeout);
             IWebComponent.Configuration.Driver.Navigate().GoToUrl(Address);
-            IWebComponent.Context = Context;          
+            IWebComponent.Context = Context;
         }
 
         [TearDown]
@@ -48,7 +48,7 @@ namespace Example.Test
 
         protected static void LogOut()
         {
-            var logOutRequirement = new ButtonRequirement()
+            var logOutRequirement = new ButtonRequirement<ButtonComponent>()
                 .HasTip()
                 .And()
                 .ByTipEquality("Настройки")
@@ -79,9 +79,9 @@ namespace Example.Test
         protected static void LogIn(string username, string password) =>
             IWebComponent.Context.GetComponent<AuthorizationFormComponent>().Perform().LogIn(username, password);
 
-        protected static IWebComponentBuilder<ILoadingComponent> GetLoad() => Context.GetComponent<ILoadingComponent>();
+        protected static IWebComponentBuilder<ILoadingComponent> GetLoad() => Context.GetComponent<ILoadingComponent>(typeof(LoadingComponent));
 
-        protected static IMenuComponent GetMenu(int index) => Context.GetComponent<IMenuComponent>()
+        protected static IMenuComponent GetMenu(int index) => Context.GetComponent<IMenuComponent>(typeof(MenuComponent))
             .WithDescription(MenuComponent.DEFAULT_DESCRIPTION.With(index))
             .Perform();
 

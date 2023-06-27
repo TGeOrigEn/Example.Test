@@ -1,11 +1,11 @@
-﻿using Example.Test.Components.Buttons;
-using Example.Test.Components.TreeView;
-using Example.Test.Drivers;
-using Example.Test.Requirements;
-using Example.Test.Requirements.Buttons;
-using Example.Test.Requirements.Menu;
+﻿using Example.Test.Drivers;
 using OpenQA.Selenium;
-using static Example.Test.Components.TreeView.TreeViewItemComponent;
+using Tdms.Api.Components.Implementations.Components.Buttons;
+using Tdms.Api.Components.Implementations.Components.TreeView;
+using Tdms.Api.Components.Implementations.Requirements.Buttons;
+using Tdms.Api.Components.Implementations.Requirements.Menu;
+using Tdms.Api.Components.Implementations.Requirements.TreeView;
+using static Tdms.Api.Components.Interfaces.Components.TreeView.ITreeViewItemComponent;
 
 namespace Example.Test
 {
@@ -20,10 +20,10 @@ namespace Example.Test
         {
             LogIn("SYSADMIN", string.Empty);
 
-            var buttonRequirement = new ButtonRequirement()
-                .HasText()
+            var buttonRequirement = new ButtonRequirement<ButtonComponent>()
+                .HasName()
                 .And()
-                .ByTextEquality("ОБЪЕКТЫ")
+                .ByNameEquality("ОБЪЕКТЫ")
                 .Perform();
 
             GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
@@ -35,7 +35,7 @@ namespace Example.Test
 
             button.Click();
 
-            var expandabilityRequirement = new TreeViewItemRequirement()
+            var expandabilityRequirement = new TreeViewItemRequirement<TreeViewItemComponent>()
                 .IsDisplayed()
                 .And()
                 .IsExpandable()
@@ -45,7 +45,7 @@ namespace Example.Test
                 .ByNameEquality("Наша организация")
                 .Perform();
 
-            var itemRequirement = new TreeViewItemRequirement()
+            var itemRequirement = new TreeViewItemRequirement<TreeViewItemComponent>()
                 .IsDisplayed()
                 .And()
                 .IsExpandable()
@@ -73,9 +73,9 @@ namespace Example.Test
                 .ByNameEquality("Обновить")
                 .Perform();
 
-            /*var menuItem = GetMenu(0).GetItem().WithRequirement(menuItemRequirement).Perform();
+            var menuItem = GetMenu(0).GetItem().WithRequirement(menuItemRequirement).Perform();
 
-            menuItem.Click();*/
+            menuItem.Click();
 
             LogOut();
         }
@@ -87,10 +87,10 @@ namespace Example.Test
 
             GetLoad().Perform().Wait(TimeSpan.FromSeconds(5));
 
-            var buttonRequirement = new ButtonRequirement()
-                .HasText()
+            var buttonRequirement = new ButtonRequirement<ButtonComponent>()
+                .HasName()
                 .And()
-                .ByTextEquality("ОБЪЕКТЫ")
+                .ByNameEquality("ОБЪЕКТЫ")
                 .Perform();
 
             var button = Context
@@ -100,7 +100,7 @@ namespace Example.Test
 
             button.Click();
 
-            var expandabilityRequirement = new TreeViewItemRequirement()
+            var expandabilityRequirement = new TreeViewItemRequirement<TreeViewItemComponent>()
                 .IsDisplayed()
                 .And()
                 .IsExpandable()

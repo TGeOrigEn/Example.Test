@@ -2,7 +2,7 @@
 {
     public interface ILoadingComponent : IApplicationComponent
     {
-        string GetText();
+        string GetMessage();
 
         void Wait(TimeSpan timeout);
     }

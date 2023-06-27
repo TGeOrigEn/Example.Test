@@ -37,14 +37,14 @@ namespace Tdms.Api.Components.Implementations.Components.Menu
 
         protected override IDescription InitializeDescription() => DEFAULT_DESCRIPTION;
 
-        public void Click() => Actions.Click();
+        public virtual void Click() => Actions.Click();
 
-        public string GetName() => nameComponent.Properties.GetText();
+        public virtual string GetName() => nameComponent.Properties.GetText();
 
-        public bool HasCheckBox() => checkBox.IsAvalable();
+        public virtual bool HasCheckBox() => checkBox.IsAvalable();
 
-        public void Hover() => Actions.Hover();
+        public virtual void Hover() => Actions.Hover();
 
-        public bool IsCheck() => GetAttribute(_CHECKED_ATTRIBUTE, this).Equals("true");
+        public virtual bool IsCheck() => GetAttribute(_CHECKED_ATTRIBUTE, this).Equals("true");
     }
 }

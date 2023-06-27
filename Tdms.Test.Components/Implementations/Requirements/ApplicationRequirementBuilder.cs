@@ -5,6 +5,10 @@ using Tdms.Api.Components.Interfaces.Requirements;
 
 namespace Tdms.Api.Components.Implementations.Requirements
 {
+    public sealed class ApplicationRequirement<TComponent> : ApplicationRequirementBuilder<TComponent, ApplicationRequirement<TComponent>> where TComponent : IApplicationComponent { }
+
+    public sealed class ApplicationRequirement : ApplicationRequirementBuilder<IApplicationComponent, ApplicationRequirement> { }
+
     public abstract class ApplicationRequirementBuilder<TComponent, TBuilder> : WebComponentRequirementBuilder<TComponent, TBuilder>, IApplicationRequirementBuilder<TComponent, TBuilder>
         where TBuilder : ApplicationRequirementBuilder<TComponent, TBuilder>
         where TComponent : IApplicationComponent

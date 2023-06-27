@@ -7,8 +7,8 @@ namespace Tdms.Api.Components.Interfaces.Requirements.LoadIndicator
     where TBuilder : ILoadingRequirementBuilder<TComponent, TBuilder>
     where TComponent : ILoadingComponent
     {
-        new IOperationBuilder<TComponent, TBuilder> ByTextEquality(string value);
+        IOperationBuilder<TComponent, TBuilder> ByMessageEquality(string value);
 
-        new IOperationBuilder<TComponent, TBuilder> ByTextContent(string value);
+        IOperationBuilder<TComponent, TBuilder> ByMessageContent(string value);
     }
 }
