@@ -12,6 +12,8 @@
 
         int GetState();
 
+        void ContextClick();
+
         void DoubleClick();
 
         void Click();

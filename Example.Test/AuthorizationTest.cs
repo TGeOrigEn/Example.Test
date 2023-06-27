@@ -31,8 +31,8 @@ namespace Example.Test
         };
 
         [Test]
-        [AllureSubSuite("Успешные авторизации")]
         [AllureOwner("Артём Тисло Максимович")]
+        [AllureSubSuite("Успешные авторизации")]
         [AllureName("Успешная авторизация")]
         [TestCaseSource(nameof(_VALIDATED_USERS))]
         public void AuthorizationSuccessTest(string username, string password)
@@ -56,8 +56,8 @@ namespace Example.Test
         }
 
         [Test]
-        [AllureSubSuite("Неудачные авторизации")]
         [AllureOwner("Артём Тисло Максимович")]
+        [AllureSubSuite("Неудачные авторизации")]      
         [AllureName("Неудачная авторизация")]
         [TestCaseSource(nameof(_INVALIDATED_USERS))]
         public void AuthorizationUnsuccessTest(string username, string password)

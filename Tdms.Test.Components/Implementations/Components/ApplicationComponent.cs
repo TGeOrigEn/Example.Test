@@ -44,6 +44,9 @@ namespace Tdms.Api.Components.Implementations.Components
             return false;
         }
 
+        protected static bool ContainsClass(string className, IWebComponent component) =>
+            component.Properties.GetClass().Contains(className);
+
         protected static string GetValue(IWebComponent inputComponent) => inputComponent.Properties.GetValue()
             ?? throw new WebComponentException($"Веб-компонент '{inputComponent.Hierarchy}' не имеет атрибут 'value'.");
     }
