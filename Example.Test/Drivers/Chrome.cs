@@ -21,7 +21,7 @@ namespace Example.Test.Drivers
 
             chromeOptions.AddAdditionalOption("selenoid:options", selenoidOptions);
 
-            return new RemoteWebDriver(new Uri($"{host}/wd/hub"), chromeOptions);
+            return new RemoteWebDriver(new Uri($"{host}wd/hub"), chromeOptions);
         }
     }
 }
