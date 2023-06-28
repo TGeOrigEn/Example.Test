@@ -2,8 +2,6 @@
 using NUnit.Allure.Attributes;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System;
 using Tdms.Api.Components.Implementations.Components.Table;
 using Tdms.Api.Components.Implementations.Components.Window;
 using Tdms.Api.Components.Implementations.Requirements.Menu;
