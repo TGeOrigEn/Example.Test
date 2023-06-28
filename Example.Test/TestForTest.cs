@@ -25,6 +25,16 @@ namespace Example.Test
             LogIn("SYSADMIN", string.Empty);
 
             var headerRequirement = new TableHeaderRequirement()
+                .IsEnabled()
+                .And()
+                .IsAvalable()
+                .And()
+                .HasTip(false)
+                .And()
+                .ByTextContent(string.Empty)
+                .And()
+                .IsSelected(false)
+                .And()
                 .ByNameEquality("Дата модификации")
                 .Perform();
 
