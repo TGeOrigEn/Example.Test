@@ -2,6 +2,7 @@
 using NUnit.Allure.Attributes;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using System;
 using Tdms.Api.Components.Implementations.Components.Table;
 using Tdms.Api.Components.Implementations.Components.Window;
@@ -13,7 +14,7 @@ namespace Example.Test
     [AllureSuite("Тесты авторизации")]
     public class TestForTest : WebApplicationTest
     {
-        protected override IWebDriver Driver => Chrome.Remote(Host);
+        protected override IWebDriver Driver => new ChromeDriver();
 
         protected override string Address => "http://10.0.11.18:8081/client/";
 
