@@ -7,7 +7,9 @@ using System;
 using System.Linq;
 using Tdms.Api.Components.Implementations.Components.Buttons;
 using Tdms.Api.Components.Implementations.Components.Fields;
+using Tdms.Api.Components.Implementations.Components.Form;
 using Tdms.Api.Components.Implementations.Components.Loading;
+using Tdms.Api.Components.Implementations.Components.Main;
 using Tdms.Api.Components.Implementations.Components.Menu;
 using Tdms.Api.Components.Implementations.Components.Table;
 using Tdms.Api.Components.Implementations.Components.TreeView;
@@ -15,7 +17,6 @@ using Tdms.Api.Components.Implementations.Components.Window;
 using Tdms.Api.Components.Implementations.Requirements;
 using Tdms.Api.Components.Implementations.Requirements.Buttons;
 using Tdms.Api.Components.Implementations.Requirements.Fields;
-using Tdms.Api.Components.Implementations.Requirements.Fields.Dropdown;
 using Tdms.Api.Components.Implementations.Requirements.Menu;
 using Tdms.Api.Components.Implementations.Requirements.Table;
 using Tdms.Api.Components.Implementations.Requirements.TreeView;
@@ -36,13 +37,9 @@ namespace Example.Test
         {
             LogIn("SYSADMIN", string.Empty);
 
-            var headerRequirement = new TableHeaderRequirement()
-                .ByNameEquality("Дата модификации")
-                .Perform();
+            var headerRequirement = new TableHeaderRequirement().ByNameEquality("Дата модификации").Perform();
 
-            var menuItemRequirement = new MenuItemRequirement()
-                .ByNameEquality("Фильтр")
-                .Perform();
+            var menuItemRequirement = new MenuItemRequirement().ByNameEquality("Фильтр").Perform();
 
             var table = Context
                 .GetComponent<TableComponent>()
@@ -61,15 +58,10 @@ namespace Example.Test
 
             menuItem.Click();
 
-            table.GetRow().Perform().Click();
-
-            header.GetFilter().Perform().ClickOnTrigger().Perform().GetItem().WithRequirement(new DropdownListItemRequirement().ByNameEquality("Текущий месяц").Perform()).Perform().Click();
+            //header.GetFilter().Perform().ClickOnTrigger().Perform().GetItem().WithRequirement(new DropdownListItemRequirement().ByNameEquality("Текущий месяц").Perform()).Perform().Click();
 
             var itemRequirement = new MenuItemRequirement()
                 .ByNameEquality("Столбцы")
-                .Perform();
-
-            menu = header.ShowMenu()
                 .Perform();
 
             menu.GetItem()
@@ -162,6 +154,25 @@ namespace Example.Test
 
             IWebComponent.Context.GetComponent<WindowComponent>().WithRequirement(editWindowRequirement).Perform().Close();
 
+            IWebComponent.Context.GetComponent<TreeViewItemComponent>().WithRequirement(ourOrganizationTreeViewItemRequirement).Perform().Click();
+
+
+        }
+
+        [Test]
+        public void FofTest()
+        {
+            var authorizationForm = IWebComponent.Context.GetComponent<AuthorizationFormComponent>().Perform();
+            authorizationForm.LogIn("SYSADMIN", "");
+
+            var application = IWebComponent.Context.GetComponent<ApplicationComponent>().Perform();
+
+            application.GetLoading().Perform().Wait(TimeSpan.FromSeconds(1));
+
+            application.Header.Search.SetValue("123");
+            application.Header.Search.Search();
+            application.Header.Search.Remove();
+            application.Header.Search.AdvancedSearch();
 
         }
     }

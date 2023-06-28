@@ -7,7 +7,7 @@ using Tdms.Api.Components.Interfaces.Components;
 
 namespace Tdms.Api.Components.Implementations.Components
 {
-    public abstract class ApplicationComponent : WebComponent, IApplicationComponent
+    public class ApplicationComponent : WebComponent, IApplicationComponent
     {
         private const string _REFERENCE_ATTRIBUTE = "data-reference";
 

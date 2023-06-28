@@ -11,5 +11,7 @@
         void Search();
 
         void Remove();
+
+        void AdvancedSearch();
     }
 }

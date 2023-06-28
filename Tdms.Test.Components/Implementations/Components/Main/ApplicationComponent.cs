@@ -1,8 +1,10 @@
 ﻿using Empyrean.Core.Implementations;
 using Empyrean.Core.Interfaces;
 using Tdms.Api.Components.Implementations.Components.Fields.Dropdown.List;
+using Tdms.Api.Components.Implementations.Components.Loading;
 using Tdms.Api.Components.Implementations.Components.Menu;
 using Tdms.Api.Components.Interfaces.Components.Field.Dropdown.List;
+using Tdms.Api.Components.Interfaces.Components.LoadIndicator;
 using Tdms.Api.Components.Interfaces.Components.Menu;
 
 namespace Tdms.Api.Components.Implementations.Components.Main
@@ -22,10 +24,13 @@ namespace Tdms.Api.Components.Implementations.Components.Main
 
         protected override IDescription InitializeDescription() => DEFAULT_DESCRIPTION;
 
-        public IWebComponentBuilder<IMenuComponent> GetMenu() =>
-            GetComponent<IMenuComponent>(typeof(MenuComponent));
-
         public IWebComponentBuilder<IDropdownListComponent> GetDropdownList() =>
             GetComponent<IDropdownListComponent>(typeof(DropdownListComponent));
+
+        public IWebComponentBuilder<ILoadingComponent> GetLoading() =>
+            GetComponent<ILoadingComponent>(typeof(LoadingComponent));
+
+        public IWebComponentBuilder<IMenuComponent> GetMenu() =>
+            GetComponent<IMenuComponent>(typeof(MenuComponent));
     }
 }
