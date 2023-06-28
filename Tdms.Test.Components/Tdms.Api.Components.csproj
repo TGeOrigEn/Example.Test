@@ -10,4 +10,8 @@
     <PackageReference Include="Empyrean.Core.Allure" Version="1.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Implementations\Components\Search\" />
+  </ItemGroup>
+
 </Project>

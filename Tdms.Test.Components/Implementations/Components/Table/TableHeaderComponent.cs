@@ -1,8 +1,6 @@
 ﻿using Empyrean.Core.Implementations;
 using Empyrean.Core.Interfaces;
-using Tdms.Api.Components.Implementations.Components.Fields;
 using Tdms.Api.Components.Implementations.Components.Menu;
-using Tdms.Api.Components.Interfaces.Components.Field.Dropdown;
 using Tdms.Api.Components.Interfaces.Components.Menu;
 using Tdms.Api.Components.Interfaces.Components.Table;
 using static Tdms.Api.Components.Interfaces.Components.Table.ITableHeaderComponent;
@@ -44,8 +42,8 @@ namespace Tdms.Api.Components.Implementations.Components.Table
 
         public void Click() => Actions.Click();
 
-        public IWebComponentBuilder<IDropdownFieldComponent> GetFilter() =>
-            GetComponent<IDropdownFieldComponent>(typeof(FieldComponent));
+        public IWebComponentBuilder<ITableFilterComponent> GetFilter() =>
+            GetComponent<ITableFilterComponent>(typeof(TableFilterComponent));
 
         public string GetName() => nameComponent.Properties.GetText();
 
@@ -59,8 +57,11 @@ namespace Tdms.Api.Components.Implementations.Components.Table
             };
         }
 
+        public void Hover() => Actions.Hover();
+
         public IWebComponentBuilder<IMenuComponent> ShowMenu()
         {
+            IWebComponent.Context.GetComponent().WithDescription(new Description("div[id^='gridcolumn'][id*='triggerEl']", "123")).Perform().Actions.Hover();
             Actions.Hover();
             triggerComponent.Actions.Click();
 

@@ -10,6 +10,8 @@
 
         string GetName();
 
+        void ContextClick();
+
         void Click();
 
         void Expand(ExpandVariant variant = ExpandVariant.DoubleClick);

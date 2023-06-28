@@ -1,5 +1,6 @@
 ﻿using Empyrean.Core.Implementations;
 using Empyrean.Core.Interfaces;
+using System.Xml.Serialization;
 using Tdms.Api.Components.Interfaces.Components.TreeView;
 using static Tdms.Api.Components.Interfaces.Components.TreeView.ITreeViewItemComponent;
 
@@ -47,6 +48,8 @@ namespace Tdms.Api.Components.Implementations.Components.TreeView
         public virtual string GetName() => nameComponent.Properties.GetText();
 
         public virtual void Click() => Actions.Click();
+
+        public virtual void ContextClick() => Actions.ContextClick();
 
         public virtual void Expand(ExpandVariant variant = ExpandVariant.DoubleClick)
         {

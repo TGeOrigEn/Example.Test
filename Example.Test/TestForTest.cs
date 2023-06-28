@@ -1,11 +1,24 @@
-﻿using Example.Test.Drivers;
+﻿using Empyrean.Core.Interfaces;
+using Example.Test.Drivers;
 using NUnit.Allure.Attributes;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using System;
+using System.Linq;
+using Tdms.Api.Components.Implementations.Components.Buttons;
+using Tdms.Api.Components.Implementations.Components.Fields;
+using Tdms.Api.Components.Implementations.Components.Loading;
+using Tdms.Api.Components.Implementations.Components.Menu;
 using Tdms.Api.Components.Implementations.Components.Table;
+using Tdms.Api.Components.Implementations.Components.TreeView;
 using Tdms.Api.Components.Implementations.Components.Window;
+using Tdms.Api.Components.Implementations.Requirements;
+using Tdms.Api.Components.Implementations.Requirements.Buttons;
+using Tdms.Api.Components.Implementations.Requirements.Fields;
+using Tdms.Api.Components.Implementations.Requirements.Fields.Dropdown;
 using Tdms.Api.Components.Implementations.Requirements.Menu;
 using Tdms.Api.Components.Implementations.Requirements.Table;
+using Tdms.Api.Components.Implementations.Requirements.TreeView;
 
 namespace Example.Test
 {
@@ -24,16 +37,6 @@ namespace Example.Test
             LogIn("SYSADMIN", string.Empty);
 
             var headerRequirement = new TableHeaderRequirement()
-                .IsEnabled()
-                .And()
-                .IsAvalable()
-                .And()
-                .HasTip(false)
-                .And()
-                .ByTextContent(string.Empty)
-                .And()
-                .IsSelected(false)
-                .And()
                 .ByNameEquality("Дата модификации")
                 .Perform();
 
@@ -58,8 +61,15 @@ namespace Example.Test
 
             menuItem.Click();
 
+            table.GetRow().Perform().Click();
+
+            header.GetFilter().Perform().ClickOnTrigger().Perform().GetItem().WithRequirement(new DropdownListItemRequirement().ByNameEquality("Текущий месяц").Perform()).Perform().Click();
+
             var itemRequirement = new MenuItemRequirement()
                 .ByNameEquality("Столбцы")
+                .Perform();
+
+            menu = header.ShowMenu()
                 .Perform();
 
             menu.GetItem()
@@ -81,6 +91,78 @@ namespace Example.Test
             var window = Context.GetComponent<WindowComponent>().Perform();
 
             window.Close();
+        }
+
+        [Test]
+        public void TestTest()
+        {
+            LogIn("SYSADMIN", string.Empty);
+
+            Context.GetComponent<LoadingComponent>().Perform().Wait(TimeSpan.FromSeconds(1));
+
+            Context.GetComponent<ButtonComponent>()
+                .WithRequirement(new ButtonRequirement<ButtonComponent>()
+                .HasTip()
+                .And()
+                .ByTipEquality("Объекты")
+                .Perform()).Perform().Click();
+
+            Context
+                .GetComponents<TreeViewItemComponent>()
+                .WithRequirement(new TreeViewItemRequirement<TreeViewItemComponent>().IsDisplayed().And().IsExpandable().And().IsExpanded(false).Perform())
+                .Perform().ToList().ForEach(elemet => elemet.Expand());
+
+            Context
+                .GetComponents<TreeViewItemComponent>()
+                .WithRequirement(new TreeViewItemRequirement<TreeViewItemComponent>().IsDisplayed().And().IsExpandable().And().IsExpanded(false).Perform())
+                .Perform().ToList().ForEach(elemet => elemet.Expand());
+        }
+
+        [Test]
+        public void TestTest1()
+        {
+            var fieldRequirement = new FieldRequirement<FieldComponent>();
+
+            var buttonRequirement = new ButtonRequirement<ButtonComponent>();
+
+            var menuItemRequirement = new MenuItemRequirement<MenuItemComponent>();
+
+            var windowRequirement = new WindowRequirement<WindowComponent>();
+
+            var treeViewItemRequirement = new TreeViewItemRequirement<TreeViewItemComponent>().IsDisplayed().And().IsExpandable().And().IsExpanded(false);
+
+            var usernameFieldRequirement = fieldRequirement.HasLabel().And().ByLabelEquality("Пользователь:").Perform();
+            var passwordFieldRequirement = fieldRequirement.HasLabel().And().ByLabelEquality("Пароль:").Perform();
+
+            var objectsButtonRequirement = buttonRequirement.HasTip().And().ByTipEquality("Объекты").Perform();
+            var logInButtonRequirement = buttonRequirement.HasName().And().ByNameEquality("Войти").Perform();
+
+            var ourOrganizationTreeViewItemRequirement = treeViewItemRequirement.And().ByNameEquality("Наша организация").Perform();
+
+            var testTreeViewItemRequirement = treeViewItemRequirement.And().ByNameContent("Тестовый").Perform();
+
+            var editMenuItemRequirement = menuItemRequirement.ByNameEquality("Редактировать карточку...").Perform();
+
+            var editWindowRequirement = windowRequirement.ByTitleEquality("Редактирование объекта").Perform();
+
+            IWebComponent.Context.GetComponent<FieldComponent>().WithRequirement(usernameFieldRequirement).Perform().SetValue("SYSADMIN");
+            IWebComponent.Context.GetComponent<FieldComponent>().WithRequirement(passwordFieldRequirement).Perform().SetValue("");
+
+            IWebComponent.Context.GetComponent<ButtonComponent>().WithRequirement(logInButtonRequirement).Perform().Click();
+
+            IWebComponent.Context.GetComponent<LoadingComponent>().Perform().Wait(TimeSpan.FromSeconds(1));
+
+            IWebComponent.Context.GetComponent<ButtonComponent>().WithRequirement(objectsButtonRequirement).Perform().Click();
+
+            IWebComponent.Context.GetComponent<TreeViewItemComponent>().WithRequirement(ourOrganizationTreeViewItemRequirement).Perform().Expand();
+
+            IWebComponent.Context.GetComponent<TreeViewItemComponent>().WithRequirement(testTreeViewItemRequirement).Perform().ContextClick();
+
+            IWebComponent.Context.GetComponent<MenuComponent>().Perform().GetItem<MenuItemComponent>().WithRequirement(editMenuItemRequirement).Perform().Click();
+
+            IWebComponent.Context.GetComponent<WindowComponent>().WithRequirement(editWindowRequirement).Perform().Close();
+
+
         }
     }
 }

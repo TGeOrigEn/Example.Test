@@ -1,8 +1,6 @@
-﻿using Empyrean.Core.Interfaces;
-
-namespace Tdms.Api.Components.Interfaces.Components.Field.Dropdown.List
+﻿namespace Tdms.Api.Components.Interfaces.Components.Field.Dropdown.List
 {
-    public interface IDropdownListItemComponent : IWebComponent
+    public interface IDropdownListItemComponent : IApplicationComponent
     {
         string GetName();
 
