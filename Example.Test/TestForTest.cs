@@ -65,8 +65,6 @@ namespace Example.Test
 
             var value = cell.GetValue();
 
-            value = cell.GetValue();
-
             cell.ContextClick();
 
             GetMenu(0).GetItem().WithRequirement(new MenuItemRequirement().ByNameEquality("Редактировать карточку...").Perform()).Perform().Click();
