@@ -14,7 +14,7 @@ namespace Example.Test
     [AllureSuite("Тесты авторизации")]
     public class TestForTest : WebApplicationTest
     {
-        protected override IWebDriver Driver => new ChromeDriver();
+        protected override IWebDriver Driver => Chrome.Remote(Host);
 
         protected override string Address => "http://10.0.11.18:8081/client/";
 
