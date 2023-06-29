@@ -14,11 +14,11 @@ namespace Tdms.Api.Components.Implementations.Components.Main
 
         public TabPanel TabPanel { get; protected set; }
 
-        public ITableComponent Table { get; protected set; }
+
 
         protected PreviewPanel()
         {
-
+            FileViewPanel = GetComponent<FileViewPanel>().Perform();
         }
 
         protected override IDescription InitializeDescription() => DEFAULT_DESCRIPTION;

@@ -177,6 +177,25 @@ namespace Example.Test
             application.Body.ToolBar.ShowTreeViewButton.Click();
             application.Body.ToolBar.ShowPreviewPanelButton.Click();
 
+            application.Body.ToolBar.ShowTreeViewButton.Click();
+            application.Body.ToolBar.ShowPreviewPanelButton.Click();
+
+            application.Header.GoToObjects();
+
+            application.Body.TreeView.GetItem()
+                .WithRequirement(new TreeViewItemRequirement().ByNameEquality("Наша организация").Perform()).Perform().Expand();
+
+            application.Body.TreeView.GetItem()
+                .WithRequirement(new TreeViewItemRequirement().ByNameEquality("Каб. № 142 (эт. № 222)").Perform()).Perform().Expand();
+
+            application.Body.TreeView.GetItem()
+                .WithRequirement(new TreeViewItemRequirement().ByNameContent("Лебедева").Perform()).Perform().Click();
+
+            application.Body.PreviewPanel.FileViewPanel.ShowTableButton.Click();
+       
+            application.Body.PreviewPanel.FileViewPanel.Table.GetHeaders().Perform().ToList()[1].ShowMenu().Perform();
+
+            application.Body.PreviewPanel.FileViewPanel.AddFileButton.Actions.Click();
         }
     }
 }

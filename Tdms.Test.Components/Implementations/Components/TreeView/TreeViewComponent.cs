@@ -18,8 +18,8 @@ namespace Tdms.Api.Components.Implementations.Components.TreeView
 
         public IWebComponentBuilder<TComponent> GetItem<TComponent>() where TComponent : ITreeViewItemComponent => GetComponent<TComponent>();
 
-        public IWebComponentCollectionBuilder<ITreeViewItemComponent> GetItems() => GetComponents<ITreeViewItemComponent>(typeof(TreeViewComponent));
+        public IWebComponentCollectionBuilder<ITreeViewItemComponent> GetItems() => GetComponents<ITreeViewItemComponent>(typeof(TreeViewItemComponent));
 
-        public IWebComponentBuilder<ITreeViewItemComponent> GetItem() => GetComponent<ITreeViewItemComponent>(typeof(TreeViewComponent));
+        public IWebComponentBuilder<ITreeViewItemComponent> GetItem() => GetComponent<ITreeViewItemComponent>(typeof(TreeViewItemComponent));
     }
 }
