@@ -165,7 +165,7 @@ namespace Example.Test
             var authorizationForm = IWebComponent.Context.GetComponent<AuthorizationFormComponent>().Perform();
             authorizationForm.LogIn("SYSADMIN", "");
 
-            var application = IWebComponent.Context.GetComponent<ApplicationComponent>().Perform();
+            var application = IWebComponent.Context.GetComponent<Application>().Perform();
 
             application.GetLoading().Perform().Wait(TimeSpan.FromSeconds(1));
 
@@ -173,6 +173,9 @@ namespace Example.Test
             application.Header.Search.Search();
             application.Header.Search.Remove();
             application.Header.Search.AdvancedSearch();
+
+            application.Body.ToolBar.ShowTreeViewButton.Click();
+            application.Body.ToolBar.ShowPreviewPanelButton.Click();
 
         }
     }

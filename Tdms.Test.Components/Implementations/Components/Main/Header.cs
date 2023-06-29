@@ -10,7 +10,7 @@ using Tdms.Api.Components.Interfaces.Components.Search;
 
 namespace Tdms.Api.Components.Implementations.Components.Main
 {
-    public class ApplicationHeaderComponent : WebComponent
+    public class Header : WebComponent
     {
         public static readonly IDescription DEFAULT_DESCRIPTION = new Description(_DEFAULT_SELECTOR, "Заголовок приложения");
 
@@ -28,7 +28,7 @@ namespace Tdms.Api.Components.Implementations.Components.Main
 
         protected IButtonComponent mailButton;
 
-        protected ApplicationHeaderComponent()
+        protected Header()
         {
             var buttonRequirement = new ButtonRequirement<ButtonComponent>();
 
